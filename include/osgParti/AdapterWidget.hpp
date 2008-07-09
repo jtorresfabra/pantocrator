@@ -16,56 +16,46 @@
 *  THE SOFTWARE.
 */
 
+#include <osgViewer/Viewer>
+#include <osgViewer/CompositeViewer>
+#include <osgViewer/ViewerEventHandlers>
+#include <osgGA/TrackballManipulator>
+#include <osgDB/ReadFile>
+#include <osgParti/Export.hpp>
+
+#if USE_QT4
+
     #include <QtCore/QString>
     #include <QtCore/QTimer>
     #include <QtGui/QKeyEvent>
     #include <QtGui/QApplication>
     #include <QtOpenGL/QGLWidget>
+    #include <QtGui/QMainWindow>
+    #include <QtGui/QMdiSubWindow>
+    #include <QtGui/QMdiArea>
     
     using Qt::WindowFlags;
 
-#include <osgViewer/Viewer>
-#include <osgViewer/CompositeViewer>
-#include <osgViewer/ViewerEventHandlers>
-#include <osgViewer/GraphicsWindow>
+#else
 
-#include <osgViewer/ViewerEventHandlers>
+    class QWidget;
+    #include <qtimer.h>
+    #include <qgl.h>
+    #include <qapplication.h>
 
-#if defined(WIN32) && !defined(__CYGWIN__)
-#include <osgViewer/api/Win32/GraphicsWindowWin32>
-typedef HWND WindowHandle;
-typedef osgViewer::GraphicsWindowWin32::WindowData WindowData;
-#elif defined(__APPLE__) 
-#include <osgViewer/api/Carbon/GraphicsWindowCarbon>
-typedef WindowRef WindowHandle;
-typedef osgViewer::GraphicsWindowCarbon::WindowData WindowData;
-#else // all other unix
-#include <osgViewer/api/X11/GraphicsWindowX11>
-typedef Window WindowHandle;
-typedef osgViewer::GraphicsWindowX11::WindowData WindowData;
+    #define WindowFlags WFlags
+
 #endif
-
-#include <osgParti/Export.hpp>
-#include <osgGA/TrackballManipulator>
-#include <osgGA/FlightManipulator>
-#include <osgGA/DriveManipulator>
-#include <osgGA/KeySwitchMatrixManipulator>
-#include <osgGA/StateSetManipulator>
-#include <osgGA/AnimationPathManipulator>
-#include <osgGA/TerrainManipulator>
-
-#include <osgDB/ReadFile>
 
 #include <iostream>
 namespace osgParti{
-
-class OSGPARTI_EXPORT QOSGWidget : public QWidget
+class OSGPARTI_EXPORT AdapterWidget : public QGLWidget
 {
     public:
 
-        QOSGWidget( QWidget * parent = 0, const char * name = 0, WindowFlags f = 0 );
+        AdapterWidget( QWidget * parent = 0, const char * name = 0, const QGLWidget * shareWidget = 0, WindowFlags f = 0 );
 
-        virtual ~QOSGWidget() {}
+        virtual ~AdapterWidget() {}
 
         osgViewer::GraphicsWindow* getGraphicsWindow() { return _gw.get(); }
         const osgViewer::GraphicsWindow* getGraphicsWindow() const { return _gw.get(); }
@@ -73,29 +63,24 @@ class OSGPARTI_EXPORT QOSGWidget : public QWidget
     protected:
 
         void init();
-        void createContext();
 
-        virtual void mouseDoubleClickEvent ( QMouseEvent * event );
-        virtual void closeEvent( QCloseEvent * event );
-        virtual void destroyEvent( bool destroyWindow = true, bool destroySubWindows = true);
-        virtual void resizeEvent( QResizeEvent * event );
+        virtual void resizeGL( int width, int height );
         virtual void keyPressEvent( QKeyEvent* event );
         virtual void keyReleaseEvent( QKeyEvent* event );
         virtual void mousePressEvent( QMouseEvent* event );
         virtual void mouseReleaseEvent( QMouseEvent* event );
         virtual void mouseMoveEvent( QMouseEvent* event );
 
-        osg::ref_ptr<osgViewer::GraphicsWindow> _gw;
+        osg::ref_ptr<osgViewer::GraphicsWindowEmbedded> _gw;
 };
 
 
-
-class OSGPARTI_EXPORT ViewerQOSG : public osgViewer::Viewer, public QOSGWidget
+class OSGPARTI_EXPORT ViewerQT : public osgViewer::Viewer, public AdapterWidget
 {
     public:
 
-        ViewerQOSG(QWidget * parent = 0, const char * name = 0, WindowFlags f = 0):
-            QOSGWidget( parent, name, f )
+        ViewerQT(QWidget * parent = 0, const char * name = 0, const QGLWidget * shareWidget = 0, WindowFlags f = 0):
+            AdapterWidget( parent, name, shareWidget, f )
         {
             getCamera()->setViewport(new osg::Viewport(0,0,width(),height()));
             getCamera()->setProjectionMatrixAsPerspective(30.0f, static_cast<double>(width())/static_cast<double>(height()), 1.0f, 10000.0f);
@@ -103,39 +88,41 @@ class OSGPARTI_EXPORT ViewerQOSG : public osgViewer::Viewer, public QOSGWidget
 
             setThreadingModel(osgViewer::Viewer::SingleThreaded);
 
-        connect(&_timer, SIGNAL(timeout()), this, SLOT(update()));
+            connect(&_timer, SIGNAL(timeout()), this, SLOT(updateGL()));
             _timer.start(10);
-    }
+        }
 
-        virtual void paintEvent( QPaintEvent * event ) {/* frame();*/ }
-
+        virtual void paintGL()
+        {
+            frame();
+        }
+    
     protected:
 
         QTimer _timer;
 };
 
-
-
-class OSGPARTI_EXPORT CompositeViewerQOSG : public osgViewer::CompositeViewer, public QOSGWidget
+class OSGPARTI_EXPORT CompositeViewerQT : public osgViewer::CompositeViewer, public AdapterWidget
 {
     public:
 
-        CompositeViewerQOSG(QWidget * parent = 0, const char * name = 0, WindowFlags f = 0):
-            QOSGWidget( parent, name, f )
+        CompositeViewerQT(QWidget * parent = 0, const char * name = 0, const QGLWidget * shareWidget = 0, WindowFlags f = 0):
+            AdapterWidget( parent, name, shareWidget, f )
         {
             setThreadingModel(osgViewer::CompositeViewer::SingleThreaded);
 
-            connect(&_timer, SIGNAL(timeout()), this, SLOT(repaint()));
-            _timer.start(1);
+            connect(&_timer, SIGNAL(timeout()), this, SLOT(updateGL()));
+            _timer.start(10);
         }
 
-        virtual void paintEvent( QPaintEvent * event ) { frame(); }
-
+        virtual void paintGL()
+        {
+            frame();
+        }
+    
     protected:
 
         QTimer _timer;
 };
-
-
 
 }
