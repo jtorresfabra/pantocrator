@@ -1,11 +1,11 @@
-#include <crsFX/ParticleSystem.hpp>
-#include <crsFX/Scripting.hpp>
+#include <osgParti/ParticleSystem.hpp>
+
 #define SMALL_INCREMENT   0.01
 #define MEDIUM_INCREMENT  0.1
 #define LARGE_INCREMENT   1.0
 
 
-using namespace crsFX;
+using namespace osgParti;
 
 
 ParticleSystem::ParticleSystem()
@@ -996,95 +996,3 @@ osgParticle::rangef ParticleSystem::getSpeed() const{
     return shooter->getInitialSpeedRange();
 }
 
-CRSFX_WRAPPER
-(
-		
-		ReferencedClass<ParticleSystem>("crsFX::ParticleSystem")
-		.inherits<osg::Object>()
-		.constructor()
-		.set("getGroup", &ParticleSystem::getGroup)
-		.set("getPat", &ParticleSystem::getPat)
-		.set("incMinR", &ParticleSystem::incMinR)
-		.set("setMinRGB", &ParticleSystem::setMinRGB)
-		.set("setMaxRGB", &ParticleSystem::setMaxRGB)
-		.set("incMinG", &ParticleSystem::incMinG)
-		.set("incMinB", &ParticleSystem::incMinB)
-		.set("incMaxR", &ParticleSystem::incMaxR)
-		.set("incMaxG", &ParticleSystem::incMaxG)
-		.set("incMaxB", &ParticleSystem::incMaxB)
-		.set("decMinR", &ParticleSystem::decMinR)
-		.set("decMinG", &ParticleSystem::decMinG)
-		.set("decMinB", &ParticleSystem::decMinB)
-		.set("decMaxR", &ParticleSystem::decMaxR)
-		.set("decMaxG", &ParticleSystem::decMaxG)
-		.set("decMaxB", &ParticleSystem::decMaxB)
-		.set("incMinAlpha", &ParticleSystem::incMinAlpha)
-		.set("incMaxAlpha", &ParticleSystem::incMaxAlpha)
-		.set("getMinColor", &ParticleSystem::getMinColor)
-		.set("getMaxColor", &ParticleSystem::getMaxColor)
-		
-		
-		.set("setMinSize", &ParticleSystem::setMinSize)
-		.set("setMinSize", &ParticleSystem::setMaxSize)
-		.set("incMinSize", &ParticleSystem::incMinSize)
-		.set("incMaxSize", &ParticleSystem::incMaxSize)
-		.set("decMinSize", &ParticleSystem::decMinSize)
-		.set("decMaxSize", &ParticleSystem::decMaxSize)
-		.set("getSize", &ParticleSystem::getSize)
-		
-		
-		.set("setShapePoint", &ParticleSystem::setShapePoint)
-		.set("setShapeQuad", &ParticleSystem::setShapeQuad)
-		.set("setShapeQuadTriangle", &ParticleSystem::setShapeQuadTriangle)
-		.set("setShapeHex", &ParticleSystem::setShapeHex)
-		.set("setShapeLine", &ParticleSystem::setShapeLine)
-		.set("getShape", &ParticleSystem::getShape)
-	
-		.set("setLifeTime", &ParticleSystem::setLifeTime)
-		.set("incLifetime", &ParticleSystem::incLifetime)
-		.set("decLifetime", &ParticleSystem::decLifetime)
-		.set("getLifetime", &ParticleSystem::getLifetime)
-		
-		
-		.set("setAlignmentFixed", &ParticleSystem::setAlignmentFixed)
-		.set("setAlignmentBillboard", &ParticleSystem::setAlignmentBillboard)
-		.set("getAlignment", &ParticleSystem::getAlignment)
-
-    	
-		.set("setMinRate", &ParticleSystem::setMinRate)
-		.set("setMaxRate", &ParticleSystem::setMaxRate)
-		.set("incMinRate", &ParticleSystem::incMinRate)
-		.set("incMaxRate", &ParticleSystem::incMaxRate)
-		.set("decMinRate", &ParticleSystem::decMinRate)
-		.set("decMaxRate", &ParticleSystem::decMaxRate)
-		.set("getRate", &ParticleSystem::getRate)
-	
-	   	
-		.set("setMinTheta", &ParticleSystem::setMinTheta)
-		.set("setMaxTheta", &ParticleSystem::setMaxTheta)
-		
-		.set("incMinTheta", &ParticleSystem::incMinTheta)
-		.set("incMaxTheta", &ParticleSystem::incMaxTheta)
-		.set("decMinTheta", &ParticleSystem::decMinTheta)
-		.set("decMaxTheta", &ParticleSystem::decMaxTheta)
-		.set("getTheta", &ParticleSystem::getTheta)
-
-		
-		.set("setMinPhi", &ParticleSystem::setMinPhi)
-		.set("setMaxPhi", &ParticleSystem::setMaxPhi)
-		.set("incMinPhi", &ParticleSystem::incMinPhi)
-		.set("incMaxPhi", &ParticleSystem::incMaxPhi)
-		.set("decMinPhi", &ParticleSystem::decMinPhi)
-		.set("decMaxPhi", &ParticleSystem::decMaxPhi)
-		.set("getPhi", &ParticleSystem::getPhi)
-
-
-		.set("setMinSpeed", &ParticleSystem::setMinSpeed)
-		.set("setMaxSpeed", &ParticleSystem::setMaxSpeed)
-		.set("incMinSpeed", &ParticleSystem::incMinSpeed)
-		.set("incMaxSpeed", &ParticleSystem::incMaxSpeed)
-		.set("decMinSpeed", &ParticleSystem::decMinSpeed)
-		.set("decMaxSpeed", &ParticleSystem::decMaxSpeed)
-		.set("getSpeed", &ParticleSystem::getSpeed)
-	;
-)

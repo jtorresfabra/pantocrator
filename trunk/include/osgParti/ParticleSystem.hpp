@@ -1,11 +1,11 @@
-#ifndef _CRSFX_PARTICLESYSTEM_HPP_
-#define _CRSFX_PARTICLESYSTEM_HPP_ 1
+#ifndef _OSGPARTI_PARTICLESYSTEM_HPP_
+#define _OSGPARTI_PARTICLESYSTEM_HPP_ 1
 
 #include <osg/Object>
 #include <osg/Group>
 #include <osg/Geode>
 #include <osg/PositionAttitudeTransform>
-#include <crsFX/Export.hpp>
+#include <osgParti/Export.hpp>
 #include <osgParticle/ParticleSystem>
 #include <osgParticle/Particle>
 #include <osgParticle/ParticleSystemUpdater>
@@ -23,9 +23,9 @@
 
 using std::string;
 
-namespace crsFX {
+namespace osgParti {
 
-	class CRSFX_EXPORT ParticleSystem: public osg::Object {
+	class OSGPARTI_EXPORT ParticleSystem: public osg::Object {
 		public:
     
 			ParticleSystem();
