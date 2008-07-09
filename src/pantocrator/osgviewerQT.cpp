@@ -96,8 +96,14 @@ int main( int argc, char **argv )
     std::cout<<"Using QOSGWidget - QWidget + osgViewer creating the graphics context."<<std::endl;
     
 #ifdef __APPLE__
-
-    	ViewerQT* viewerWindow = new ViewerQT;
+    	QWidget *window = new QWidget();
+   
+    
+    	ViewerQT* viewerWindow = new ViewerQT(window);
+	//	viewerWindow->resizeGL(window->width,window->height);
+		 	window->resize(320, 240);
+			viewerWindow->resize(320,240);
+		window->show();
 #else
         osg::ref_ptr<ViewerQOSG> viewerWindow(new ViewerQOSG);
     	viewerWindow->setGeometry(0,0,640,480);
