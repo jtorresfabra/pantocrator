@@ -45,7 +45,7 @@ typedef Window WindowHandle;
 typedef osgViewer::GraphicsWindowX11::WindowData WindowData;
 #endif
 
-
+#include <osgParti/Export.hpp>
 #include <osgGA/TrackballManipulator>
 #include <osgGA/FlightManipulator>
 #include <osgGA/DriveManipulator>
@@ -57,8 +57,9 @@ typedef osgViewer::GraphicsWindowX11::WindowData WindowData;
 #include <osgDB/ReadFile>
 
 #include <iostream>
+namespace osgParti{
 
-class QOSGWidget : public QWidget
+class OSGPARTI_EXPORT QOSGWidget : public QWidget
 {
     public:
 
@@ -87,3 +88,54 @@ class QOSGWidget : public QWidget
         osg::ref_ptr<osgViewer::GraphicsWindow> _gw;
 };
 
+
+
+class OSGPARTI_EXPORT ViewerQOSG : public osgViewer::Viewer, public QOSGWidget
+{
+    public:
+
+        ViewerQOSG(QWidget * parent = 0, const char * name = 0, WindowFlags f = 0):
+            QOSGWidget( parent, name, f )
+        {
+            getCamera()->setViewport(new osg::Viewport(0,0,width(),height()));
+            getCamera()->setProjectionMatrixAsPerspective(30.0f, static_cast<double>(width())/static_cast<double>(height()), 1.0f, 10000.0f);
+            getCamera()->setGraphicsContext(getGraphicsWindow());
+
+            setThreadingModel(osgViewer::Viewer::SingleThreaded);
+
+        connect(&_timer, SIGNAL(timeout()), this, SLOT(update()));
+            _timer.start(10);
+    }
+
+        virtual void paintEvent( QPaintEvent * event ) { frame(); }
+
+    protected:
+
+        QTimer _timer;
+};
+
+
+
+class OSGPARTI_EXPORT CompositeViewerQOSG : public osgViewer::CompositeViewer, public QOSGWidget
+{
+    public:
+
+        CompositeViewerQOSG(QWidget * parent = 0, const char * name = 0, WindowFlags f = 0):
+            QOSGWidget( parent, name, f )
+        {
+            setThreadingModel(osgViewer::CompositeViewer::SingleThreaded);
+
+            connect(&_timer, SIGNAL(timeout()), this, SLOT(repaint()));
+            _timer.start(1);
+        }
+
+        virtual void paintEvent( QPaintEvent * event ) { frame(); }
+
+    protected:
+
+        QTimer _timer;
+};
+
+
+
+}
