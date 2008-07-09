@@ -107,7 +107,7 @@ class OSGPARTI_EXPORT ViewerQOSG : public osgViewer::Viewer, public QOSGWidget
             _timer.start(10);
     }
 
-        virtual void paintEvent( QPaintEvent * event ) {/* frame();*/ }
+        virtual void paintEvent( QPaintEvent * event ) { frame(); }
 
     protected:
 
