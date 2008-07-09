@@ -39,6 +39,7 @@
 
 #include <osgDB/ReadFile>
 #include <osgParti/QOSGWidget.hpp>	
+#include <osgParti/AdapterWidget.hpp>	
 #include <iostream>
 using namespace osgParti;
 
@@ -94,16 +95,20 @@ int main( int argc, char **argv )
 
     std::cout<<"Using QOSGWidget - QWidget + osgViewer creating the graphics context."<<std::endl;
     
+#ifdef __APPLE__
 
+    	ViewerQT* viewerWindow = new ViewerQT;
+#else
         osg::ref_ptr<ViewerQOSG> viewerWindow(new ViewerQOSG);
-        viewerWindow->setGeometry(0,0,640,480);
-        
+    	viewerWindow->setGeometry(0,0,640,480);
+ 		setupManipulatorAndHandler(*viewerWindow.get(), arguments);
+#endif
         viewerWindow->setCameraManipulator(new osgGA::TrackballManipulator);
         viewerWindow->setSceneData(loadedModel.get());
 
         viewerWindow->show();
 
-        setupManipulatorAndHandler(*viewerWindow.get(), arguments);
+      
         
         a.connect( &a, SIGNAL(lastWindowClosed()), &a, SLOT(quit()) );
     
