@@ -39,7 +39,7 @@
 
 #include <osgDB/ReadFile>
 #include <osgParti/QOSGWidget.hpp>	
-#include <qtGui/QMainWindow>
+#include <QtGui/QMainWindow>
 #include <osgParti/AdapterWidget.hpp>	
 #include <osgParti/MainWindow.hpp>
 
