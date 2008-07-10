@@ -101,8 +101,8 @@ int main( int argc, char **argv )
     
     	ViewerQT* viewerWindow = new ViewerQT(window);
 	//	viewerWindow->resizeGL(window->width,window->height);
-		 	window->resize(320, 240);
-			viewerWindow->resize(320,240);
+		window->resize(320, 240);
+		viewerWindow->resize(320,240);
 		window->show();
 #else
         osg::ref_ptr<ViewerQOSG> viewerWindow(new ViewerQOSG);
