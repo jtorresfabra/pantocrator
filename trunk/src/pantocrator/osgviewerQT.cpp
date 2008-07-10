@@ -39,7 +39,10 @@
 
 #include <osgDB/ReadFile>
 #include <osgParti/QOSGWidget.hpp>	
+#include <qtGui/QMainWindow>
 #include <osgParti/AdapterWidget.hpp>	
+#include <osgParti/MainWindow.hpp>
+
 #include <iostream>
 using namespace osgParti;
 
@@ -96,14 +99,18 @@ int main( int argc, char **argv )
     std::cout<<"Using QOSGWidget - QWidget + osgViewer creating the graphics context."<<std::endl;
     
 #ifdef __APPLE__
-    	QWidget *window = new QWidget();
-   
+		QMainWindow* w = new QMainWindow();
+		Ui::MainWindow *window = new Ui::MainWindow();
+		window->setupUi(w);
+	
+			//QWidget *window = new QWidget();
     
-    	ViewerQT* viewerWindow = new ViewerQT(window);
+		ViewerQT* viewerWindow = window->getViewerQT();
 	//	viewerWindow->resizeGL(window->width,window->height);
-		window->resize(320, 240);
-		viewerWindow->resize(320,240);
-		window->show();
+	//	window->setupViewerQT(viewerWindow);
+	//	window->resize(680, 420);
+	//	viewerWindow->resize(320,240);
+		w->show();
 #else
         osg::ref_ptr<ViewerQOSG> viewerWindow(new ViewerQOSG);
     	viewerWindow->setGeometry(0,0,640,480);
