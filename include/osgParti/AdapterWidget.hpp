@@ -15,6 +15,8 @@
 *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 *  THE SOFTWARE.
 */
+#ifndef _OSGPARTI_ADAPTERWIDGET_HPP_
+#define _OSGPARTI_ADAPTERWIDGET_HPP_ 1
 
 #include <osgViewer/Viewer>
 #include <osgViewer/CompositeViewer>
@@ -126,3 +128,4 @@ class OSGPARTI_EXPORT CompositeViewerQT : public osgViewer::CompositeViewer, pub
 };
 
 }
+#endif
