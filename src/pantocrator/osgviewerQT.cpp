@@ -98,7 +98,7 @@ int main( int argc, char **argv )
 
     std::cout<<"Using QOSGWidget - QWidget + osgViewer creating the graphics context."<<std::endl;
     
-#ifdef __APPLE__
+//#ifdef __APPLE__
 		QMainWindow* w = new QMainWindow();
 		Ui::MainWindow *window = new Ui::MainWindow();
 		window->setupUi(w);
@@ -111,11 +111,11 @@ int main( int argc, char **argv )
 	//	window->resize(680, 420);
 	//	viewerWindow->resize(320,240);
 		w->show();
-#else
-        osg::ref_ptr<ViewerQOSG> viewerWindow(new ViewerQOSG);
-    	viewerWindow->setGeometry(0,0,640,480);
- 		setupManipulatorAndHandler(*viewerWindow.get(), arguments);
-#endif
+//#else
+//       osg::ref_ptr<ViewerQOSG> viewerWindow(new ViewerQOSG);
+//    	viewerWindow->setGeometry(0,0,640,480);
+// 		setupManipulatorAndHandler(*viewerWindow.get(), arguments);
+//#endif
         viewerWindow->setCameraManipulator(new osgGA::TrackballManipulator);
         viewerWindow->setSceneData(loadedModel.get());
 
