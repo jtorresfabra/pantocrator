@@ -41,7 +41,7 @@
 #include <osgParti/QOSGWidget.hpp>	
 #include <QtGui/QMainWindow>
 #include <osgParti/AdapterWidget.hpp>	
-#include <osgParti/MainWindow.hpp>
+#include <osgParti/PantocratorWindow.hpp>
 
 #include <iostream>
 using namespace osgParti;
@@ -99,9 +99,10 @@ int main( int argc, char **argv )
     std::cout<<"Using QOSGWidget - QWidget + osgViewer creating the graphics context."<<std::endl;
     
 //#ifdef __APPLE__
-		QMainWindow* w = new QMainWindow();
-		Ui::MainWindow *window = new Ui::MainWindow();
-		window->setupUi(w);
+		//QMainWindow* w = new QMainWindow();
+		//Ui::MainWindow *window = new Ui::MainWindow();
+		PantocratorWindow* window = new PantocratorWindow();
+	//	window->setupUi(w);
 	
 			//QWidget *window = new QWidget();
     
@@ -110,7 +111,7 @@ int main( int argc, char **argv )
 	//	window->setupViewerQT(viewerWindow);
 	//	window->resize(680, 420);
 	//	viewerWindow->resize(320,240);
-		w->show();
+		window->show();
 //#else
 //       osg::ref_ptr<ViewerQOSG> viewerWindow(new ViewerQOSG);
 //    	viewerWindow->setGeometry(0,0,640,480);
