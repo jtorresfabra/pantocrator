@@ -129,3 +129,4 @@ class OSGPARTI_EXPORT CompositeViewerQT : public osgViewer::CompositeViewer, pub
 
 }
 #endif
+
