@@ -1,6 +1,9 @@
 #include <osgParti/PantocratorWindow.hpp>
 #include <iostream>
 #include <QtGui/QFileDialog>
+#include <osg/View>
+
+
 using namespace osgParti;
 
 
@@ -9,6 +12,7 @@ PantocratorWindow::PantocratorWindow():QMainWindow(),MainWindow()
  	
 	setupUi(this);
 	connectSlots();
+	widget->addEventHandler(new osgViewer::StatsHandler); 
 }
 void PantocratorWindow::open(){
 	QString fileName = QFileDialog::getOpenFileName(this);
@@ -23,7 +27,6 @@ bool PantocratorWindow::saveAs(){
 }
 
 void PantocratorWindow::loadFile(const QString &fileName){
-	std::cout<<"holaa"<<std::endl;
 	osg::ref_ptr<osg::Node> loadedModel = osgDB::readNodeFile(fileName.toStdString());
 	widget->setSceneData(loadedModel.get());
 
