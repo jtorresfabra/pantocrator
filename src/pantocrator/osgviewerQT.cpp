@@ -80,46 +80,16 @@ void setupManipulatorAndHandler(osgViewer::View & viewer, osg::ArgumentParser & 
 int main( int argc, char **argv )
 {
     QApplication a( argc, argv );
-    
-    if (argc<2)
-    {
-        std::cout << argv[0] <<": requires filename argument." << std::endl;
-        return 1;
-    }
-
     osg::ArgumentParser arguments(&argc, argv);
 
      osg::ref_ptr<osg::Node> loadedModel = osgDB::readNodeFiles(arguments);
     if (!loadedModel)
-    {
         std::cout << arguments[0] <<": No data loaded." << std::endl;
-        return 1;
-    }
-
-    std::cout<<"Using QOSGWidget - QWidget + osgViewer creating the graphics context."<<std::endl;
-    
-//#ifdef __APPLE__
-		//QMainWindow* w = new QMainWindow();
-		//Ui::MainWindow *window = new Ui::MainWindow();
 		PantocratorWindow* window = new PantocratorWindow();
-	//	window->setupUi(w);
-	
-			//QWidget *window = new QWidget();
-    
 		ViewerQT* viewerWindow = window->getViewerQT();
-	//	viewerWindow->resizeGL(window->width,window->height);
-	//	window->setupViewerQT(viewerWindow);
-	//	window->resize(680, 420);
-	//	viewerWindow->resize(320,240);
 		window->show();
-//#else
-//       osg::ref_ptr<ViewerQOSG> viewerWindow(new ViewerQOSG);
-//    	viewerWindow->setGeometry(0,0,640,480);
-// 		setupManipulatorAndHandler(*viewerWindow.get(), arguments);
-//#endif
         viewerWindow->setCameraManipulator(new osgGA::TrackballManipulator);
-        viewerWindow->setSceneData(loadedModel.get());
-
+		viewerWindow->setSceneData(loadedModel.get());
         viewerWindow->show();
 
       
