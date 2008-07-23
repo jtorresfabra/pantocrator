@@ -5,7 +5,7 @@
 #include <osgParti/MainWindow.hpp>
 #include <QtGui/QApplication>
 #include <QtGui/QWidget>
-#include <osgParti/ParticleSystem.hpp>
+//#include <osgParti/ParticleSystem.hpp>
 
 //#include <QtGui/QFileDialog>
 
