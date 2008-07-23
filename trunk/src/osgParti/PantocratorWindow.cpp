@@ -28,10 +28,10 @@ bool PantocratorWindow::saveAs(){
 }
 void PantocratorWindow::newParticleSystem(){
 	
-	osgParti::ParticleSystem* particleSystem= new ParticleSystem();
-	root->addChild(particleSystem->getPat());
-    root->addChild(particleSystem->getGroup());
-	widget1->setSceneData(root.get());
+	//osgParti::ParticleSystem* particleSystem= new ParticleSystem();
+	//root->addChild(particleSystem->getPat());
+    //root->addChild(particleSystem->getGroup());
+	//widget1->setSceneData(root.get());
 }
 void PantocratorWindow::loadFile(const QString &fileName){
 	osg::ref_ptr<osg::Node> loadedModel = osgDB::readNodeFile(fileName.toStdString());
