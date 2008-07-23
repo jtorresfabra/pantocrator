@@ -5,6 +5,8 @@
 #include <osgParti/MainWindow.hpp>
 #include <QtGui/QApplication>
 #include <QtGui/QWidget>
+#include <osgParti/ParticleSystem.hpp>
+
 //#include <QtGui/QFileDialog>
 
 
@@ -17,16 +19,19 @@ namespace osgParti{
 	private slots:
 		void open();
 		bool save();
-    		bool saveAs();
-
+    	bool saveAs();
+		void newParticleSystem();
 	
 	public:
 		PantocratorWindow();
-		ViewerQT* getViewerQT(){return widget;}
-		virtual ~PantocratorWindow(){}
+		ViewerQT* getViewerQT(){return widget1;}
+		
 		void connectSlots();
 		void loadFile(const QString &fileName);
-
+		osg::ref_ptr<osg::Group>                             root;
+	protected:
+	
+		virtual ~PantocratorWindow(){}
 	};
 	
 	
