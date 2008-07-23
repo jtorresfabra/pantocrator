@@ -1,7 +1,7 @@
 /********************************************************************************
-** Form generated from reading ui file 'Pantocrator.ui'
+** Form generated from reading ui file 'Pantocrator2.ui'
 **
-** Created: Tue Jul 15 17:43:48 2008
+** Created: Tue Jul 22 19:37:43 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -27,6 +27,9 @@
 #include <QtGui/QToolBar>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
+#include <QtGui/QGroupBox>
+#include <QtGui/QDoubleSpinBox>
+#include <QtGui/QComboBox>
 
 namespace osgParti{
 
@@ -34,192 +37,206 @@ namespace osgParti{
 class OSGPARTI_EXPORT Ui_MainWindow
 {
 public:
-    QAction *actionOpen;
+  	QAction *actionOpen;
     QAction *actionSave;
     QAction *actionSave_As;
     QAction *actionParticleSystem;
     QAction *actionProcedural_Texture;
     QWidget *centralwidget;
-    ViewerQT *widget;
-    QDockWidget *dockWidget;
-    QWidget *dockWidgetContents;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    ViewerQT *widget1;
     QTabWidget *tabWidget;
     QWidget *tab;
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout;
+    QGroupBox *groupBox;
+    QGridLayout *gridLayout;
     QLabel *label;
-    QSlider *horizontalSlider;
+    QComboBox *comboBox;
     QLabel *label_2;
-    QSlider *horizontalSlider_2;
+    QComboBox *comboBox_2;
     QLabel *label_3;
-    QSlider *horizontalSlider_3;
-    QLabel *label_6;
-    QSlider *horizontalSlider_5;
-    QLabel *label_5;
-    QSlider *horizontalSlider_6;
     QLabel *label_4;
-    QSlider *horizontalSlider_4;
+    QDoubleSpinBox *doubleSpinBox_2;
+    QLabel *label_5;
+    QDoubleSpinBox *doubleSpinBox_3;
+    QLabel *label_6;
+    QDoubleSpinBox *doubleSpinBox_4;
+    QDoubleSpinBox *doubleSpinBox_5;
+    QDoubleSpinBox *doubleSpinBox;
     QWidget *tab_2;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuNew;
     QStatusBar *statusbar;
     QToolBar *toolBar;
+    QToolBar *toolBar_2;
+    QToolBar *toolBar_3;
 
-    void setupUi(QMainWindow *MainWindow)
+    void setupUi(QMainWindow *mainWindow)
     {
-    if (MainWindow->objectName().isEmpty())
-        MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-    MainWindow->resize(1041, 786);
-    MainWindow->setIconSize(QSize(25, 25));
-    actionOpen = new QAction(MainWindow);
+    if (mainWindow->objectName().isEmpty())
+        mainWindow->setObjectName(QString::fromUtf8("mainWindow"));
+    mainWindow->resize(1004, 836);
+    QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    sizePolicy.setHorizontalStretch(0);
+    sizePolicy.setVerticalStretch(0);
+    sizePolicy.setHeightForWidth(mainWindow->sizePolicy().hasHeightForWidth());
+    mainWindow->setSizePolicy(sizePolicy);
+    mainWindow->setMinimumSize(QSize(503, 0));
+    mainWindow->setIconSize(QSize(25, 25));
+    actionOpen = new QAction(mainWindow);
     actionOpen->setObjectName(QString::fromUtf8("actionOpen"));
     QIcon icon;
     icon.addPixmap(QPixmap(QString::fromUtf8("../include/images/open.png")), QIcon::Normal, QIcon::On);
     actionOpen->setIcon(icon);
-    actionSave = new QAction(MainWindow);
+    actionSave = new QAction(mainWindow);
     actionSave->setObjectName(QString::fromUtf8("actionSave"));
     QIcon icon1;
     icon1.addPixmap(QPixmap(QString::fromUtf8("../include/images/save.png")), QIcon::Normal, QIcon::On);
     actionSave->setIcon(icon1);
-    actionSave_As = new QAction(MainWindow);
+    actionSave_As = new QAction(mainWindow);
     actionSave_As->setObjectName(QString::fromUtf8("actionSave_As"));
-    actionParticleSystem = new QAction(MainWindow);
+    actionParticleSystem = new QAction(mainWindow);
     actionParticleSystem->setObjectName(QString::fromUtf8("actionParticleSystem"));
-    actionProcedural_Texture = new QAction(MainWindow);
+    actionProcedural_Texture = new QAction(mainWindow);
     actionProcedural_Texture->setObjectName(QString::fromUtf8("actionProcedural_Texture"));
-    centralwidget = new QWidget(MainWindow);
+    centralwidget = new QWidget(mainWindow);
     centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-    centralwidget->setGeometry(QRect(0, 59, 1041, 705));
-    widget = new ViewerQT(centralwidget);
+    centralwidget->setGeometry(QRect(0, 59, 1004, 755));
+    widget = new QWidget(centralwidget);
     widget->setObjectName(QString::fromUtf8("widget"));
-    widget->setGeometry(QRect(30, 10, 751, 661));
-    dockWidget = new QDockWidget(centralwidget);
-    dockWidget->setObjectName(QString::fromUtf8("dockWidget"));
-    dockWidget->setGeometry(QRect(785, 0, 231, 641));
-    dockWidgetContents = new QWidget();
-    dockWidgetContents->setObjectName(QString::fromUtf8("dockWidgetContents"));
-    dockWidgetContents->setGeometry(QRect(0, 26, 231, 615));
-    tabWidget = new QTabWidget(dockWidgetContents);
+    widget->setGeometry(QRect(0, 10, 1001, 741));
+    horizontalLayout = new QHBoxLayout(centralwidget);
+    horizontalLayout->setMargin(2);
+    horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+    horizontalLayout->setContentsMargins(10, 10, 10, 10);
+    widget1 = new ViewerQT(widget);
+    widget1->setObjectName(QString::fromUtf8("widget1"));
+	centralwidget->setLayout(horizontalLayout);
+	QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    sizePolicy1.setHorizontalStretch(0);
+    sizePolicy1.setVerticalStretch(0);
+    sizePolicy1.setHeightForWidth(widget1->sizePolicy().hasHeightForWidth());
+    widget1->setSizePolicy(sizePolicy1);
+
+    horizontalLayout->addWidget(widget1);
+
+    tabWidget = new QTabWidget(widget);
     tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-    tabWidget->setGeometry(QRect(31, 20, 181, 431));
+    QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Expanding);
+    sizePolicy2.setHorizontalStretch(0);
+    sizePolicy2.setVerticalStretch(0);
+    sizePolicy2.setHeightForWidth(tabWidget->sizePolicy().hasHeightForWidth());
+    tabWidget->setSizePolicy(sizePolicy2);
+    tabWidget->setMinimumSize(QSize(311, 0));
     tab = new QWidget();
     tab->setObjectName(QString::fromUtf8("tab"));
-    tab->setGeometry(QRect(0, 0, 175, 402));
-    layoutWidget = new QWidget(tab);
-    layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-    layoutWidget->setGeometry(QRect(20, 20, 141, 350));
-    verticalLayout = new QVBoxLayout(layoutWidget);
-    verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-    verticalLayout->setContentsMargins(0, 0, 0, 0);
-    label = new QLabel(layoutWidget);
+    tab->setGeometry(QRect(0, 0, 305, 710));
+    groupBox = new QGroupBox(tab);
+    groupBox->setObjectName(QString::fromUtf8("groupBox"));
+    groupBox->setGeometry(QRect(20, 10, 261, 241));
+    gridLayout = new QGridLayout(groupBox);
+    gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+    label = new QLabel(groupBox);
     label->setObjectName(QString::fromUtf8("label"));
 
-    verticalLayout->addWidget(label);
+    gridLayout->addWidget(label, 0, 0, 1, 1);
 
-    horizontalSlider = new QSlider(layoutWidget);
-    horizontalSlider->setObjectName(QString::fromUtf8("horizontalSlider"));
-    horizontalSlider->setOrientation(Qt::Horizontal);
+    comboBox = new QComboBox(groupBox);
+    comboBox->setObjectName(QString::fromUtf8("comboBox"));
+    comboBox->setAutoFillBackground(false);
 
-    verticalLayout->addWidget(horizontalSlider);
+    gridLayout->addWidget(comboBox, 0, 2, 1, 2);
 
-    label_2 = new QLabel(layoutWidget);
+    label_2 = new QLabel(groupBox);
     label_2->setObjectName(QString::fromUtf8("label_2"));
 
-    verticalLayout->addWidget(label_2);
+    gridLayout->addWidget(label_2, 1, 0, 1, 1);
 
-    horizontalSlider_2 = new QSlider(layoutWidget);
-    horizontalSlider_2->setObjectName(QString::fromUtf8("horizontalSlider_2"));
-    horizontalSlider_2->setOrientation(Qt::Horizontal);
+    comboBox_2 = new QComboBox(groupBox);
+    comboBox_2->setObjectName(QString::fromUtf8("comboBox_2"));
+    comboBox_2->setAutoFillBackground(false);
 
-    verticalLayout->addWidget(horizontalSlider_2);
+    gridLayout->addWidget(comboBox_2, 1, 2, 1, 2);
 
-    label_3 = new QLabel(layoutWidget);
+    label_3 = new QLabel(groupBox);
     label_3->setObjectName(QString::fromUtf8("label_3"));
 
-    verticalLayout->addWidget(label_3);
+    gridLayout->addWidget(label_3, 2, 0, 1, 1);
 
-    horizontalSlider_3 = new QSlider(layoutWidget);
-    horizontalSlider_3->setObjectName(QString::fromUtf8("horizontalSlider_3"));
-    horizontalSlider_3->setOrientation(Qt::Horizontal);
-
-    verticalLayout->addWidget(horizontalSlider_3);
-
-    label_6 = new QLabel(layoutWidget);
-    label_6->setObjectName(QString::fromUtf8("label_6"));
-
-    verticalLayout->addWidget(label_6);
-
-    horizontalSlider_5 = new QSlider(layoutWidget);
-    horizontalSlider_5->setObjectName(QString::fromUtf8("horizontalSlider_5"));
-    horizontalSlider_5->setOrientation(Qt::Horizontal);
-
-    verticalLayout->addWidget(horizontalSlider_5);
-
-    label_5 = new QLabel(layoutWidget);
-    label_5->setObjectName(QString::fromUtf8("label_5"));
-
-    verticalLayout->addWidget(label_5);
-
-    horizontalSlider_6 = new QSlider(layoutWidget);
-    horizontalSlider_6->setObjectName(QString::fromUtf8("horizontalSlider_6"));
-    horizontalSlider_6->setOrientation(Qt::Horizontal);
-
-    verticalLayout->addWidget(horizontalSlider_6);
-
-    label_4 = new QLabel(layoutWidget);
+    label_4 = new QLabel(groupBox);
     label_4->setObjectName(QString::fromUtf8("label_4"));
 
-    verticalLayout->addWidget(label_4);
+    gridLayout->addWidget(label_4, 3, 0, 1, 1);
 
-    horizontalSlider_4 = new QSlider(layoutWidget);
-    horizontalSlider_4->setObjectName(QString::fromUtf8("horizontalSlider_4"));
-    horizontalSlider_4->setOrientation(Qt::Horizontal);
+    doubleSpinBox_2 = new QDoubleSpinBox(groupBox);
+    doubleSpinBox_2->setObjectName(QString::fromUtf8("doubleSpinBox_2"));
 
-    verticalLayout->addWidget(horizontalSlider_4);
+    gridLayout->addWidget(doubleSpinBox_2, 3, 3, 1, 1);
 
-    label->raise();
-    horizontalSlider->raise();
-    label_2->raise();
-    horizontalSlider_2->raise();
-    label_6->raise();
-    horizontalSlider_5->raise();
-    label_5->raise();
-    horizontalSlider_6->raise();
-    label_4->raise();
-    horizontalSlider_4->raise();
-    label_3->raise();
-    horizontalSlider_3->raise();
+    label_5 = new QLabel(groupBox);
+    label_5->setObjectName(QString::fromUtf8("label_5"));
+
+    gridLayout->addWidget(label_5, 4, 0, 1, 1);
+
+    doubleSpinBox_3 = new QDoubleSpinBox(groupBox);
+    doubleSpinBox_3->setObjectName(QString::fromUtf8("doubleSpinBox_3"));
+
+    gridLayout->addWidget(doubleSpinBox_3, 4, 3, 1, 1);
+
+    label_6 = new QLabel(groupBox);
+    label_6->setObjectName(QString::fromUtf8("label_6"));
+
+    gridLayout->addWidget(label_6, 5, 0, 1, 1);
+
+    doubleSpinBox_4 = new QDoubleSpinBox(groupBox);
+    doubleSpinBox_4->setObjectName(QString::fromUtf8("doubleSpinBox_4"));
+
+    gridLayout->addWidget(doubleSpinBox_4, 5, 3, 1, 1);
+
+    doubleSpinBox_5 = new QDoubleSpinBox(groupBox);
+    doubleSpinBox_5->setObjectName(QString::fromUtf8("doubleSpinBox_5"));
+
+    gridLayout->addWidget(doubleSpinBox_5, 2, 3, 1, 1);
+
+    doubleSpinBox = new QDoubleSpinBox(groupBox);
+    doubleSpinBox->setObjectName(QString::fromUtf8("doubleSpinBox"));
+
+    gridLayout->addWidget(doubleSpinBox, 2, 2, 1, 1);
+
     tabWidget->addTab(tab, QString());
     tab_2 = new QWidget();
     tab_2->setObjectName(QString::fromUtf8("tab_2"));
-    tab_2->setGeometry(QRect(0, 0, 175, 402));
+    tab_2->setGeometry(QRect(0, 0, 305, 711));
     tabWidget->addTab(tab_2, QString());
-    dockWidget->setWidget(dockWidgetContents);
-    MainWindow->setCentralWidget(centralwidget);
-    dockWidget->raise();
-    tabWidget->raise();
-    horizontalSlider->raise();
-    tabWidget->raise();
-    widget->raise();
-    dockWidget->raise();
-    label_2->raise();
-    layoutWidget->raise();
-    menubar = new QMenuBar(MainWindow);
+
+    horizontalLayout->addWidget(tabWidget);
+
+    mainWindow->setCentralWidget(centralwidget);
+    menubar = new QMenuBar(mainWindow);
     menubar->setObjectName(QString::fromUtf8("menubar"));
-    menubar->setGeometry(QRect(0, 0, 1041, 22));
+    menubar->setGeometry(QRect(0, 0, 1004, 22));
     menuFile = new QMenu(menubar);
     menuFile->setObjectName(QString::fromUtf8("menuFile"));
     menuNew = new QMenu(menuFile);
     menuNew->setObjectName(QString::fromUtf8("menuNew"));
-    MainWindow->setMenuBar(menubar);
-    statusbar = new QStatusBar(MainWindow);
+    mainWindow->setMenuBar(menubar);
+    statusbar = new QStatusBar(mainWindow);
     statusbar->setObjectName(QString::fromUtf8("statusbar"));
-    statusbar->setGeometry(QRect(0, 764, 1041, 22));
-    MainWindow->setStatusBar(statusbar);
-    toolBar = new QToolBar(MainWindow);
+    statusbar->setGeometry(QRect(0, 814, 1004, 22));
+    mainWindow->setStatusBar(statusbar);
+    toolBar = new QToolBar(mainWindow);
     toolBar->setObjectName(QString::fromUtf8("toolBar"));
-    MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
+    toolBar->setGeometry(QRect(0, 22, 91, 37));
+    mainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
+    toolBar_2 = new QToolBar(mainWindow);
+    toolBar_2->setObjectName(QString::fromUtf8("toolBar_2"));
+    toolBar_2->setGeometry(QRect(91, 22, 13, 37));
+    mainWindow->addToolBar(Qt::TopToolBarArea, toolBar_2);
+    toolBar_3 = new QToolBar(mainWindow);
+    toolBar_3->setObjectName(QString::fromUtf8("toolBar_3"));
+    toolBar_3->setGeometry(QRect(104, 22, 900, 37));
+    mainWindow->addToolBar(Qt::TopToolBarArea, toolBar_3);
 
     menubar->addAction(menuFile->menuAction());
     menuFile->addAction(menuNew->menuAction());
@@ -227,42 +244,56 @@ public:
     menuFile->addAction(actionSave);
     menuFile->addAction(actionSave_As);
     menuNew->addAction(actionParticleSystem);
-    menuNew->addAction(actionProcedural_Texture);
     toolBar->addAction(actionOpen);
     toolBar->addAction(actionSave);
 
-    retranslateUi(MainWindow);
+    retranslateUi(mainWindow);
 
-    QMetaObject::connectSlotsByName(MainWindow);
+    tabWidget->setCurrentIndex(0);
+
+
+    QMetaObject::connectSlotsByName(mainWindow);
     } // setupUi
 
-    void retranslateUi(QMainWindow *MainWindow)
+    void retranslateUi(QMainWindow *mainWindow)
     {
-    MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0, QApplication::UnicodeUTF8));
-    actionOpen->setText(QApplication::translate("MainWindow", "Open", 0, QApplication::UnicodeUTF8));
-    actionSave->setText(QApplication::translate("MainWindow", "Save", 0, QApplication::UnicodeUTF8));
-    actionSave_As->setText(QApplication::translate("MainWindow", "Save As...", 0, QApplication::UnicodeUTF8));
-    actionParticleSystem->setText(QApplication::translate("MainWindow", "ParticleSystem", 0, QApplication::UnicodeUTF8));
-    actionProcedural_Texture->setText(QApplication::translate("MainWindow", "Procedural Texture", 0, QApplication::UnicodeUTF8));
-    label->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
-    label_2->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
-    label_3->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
-    label_6->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
-    label_5->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
-    label_4->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
-    tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Tab 1", 0, QApplication::UnicodeUTF8));
-    tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Tab 2", 0, QApplication::UnicodeUTF8));
-    menuFile->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
-    menuNew->setTitle(QApplication::translate("MainWindow", "New", 0, QApplication::UnicodeUTF8));
-    toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
+    mainWindow->setWindowTitle(QApplication::translate("mainWindow", "MainWindow", 0, QApplication::UnicodeUTF8));
+    actionOpen->setText(QApplication::translate("mainWindow", "Open", 0, QApplication::UnicodeUTF8));
+    actionSave->setText(QApplication::translate("mainWindow", "Save", 0, QApplication::UnicodeUTF8));
+    actionSave_As->setText(QApplication::translate("mainWindow", "Save As...", 0, QApplication::UnicodeUTF8));
+    actionParticleSystem->setText(QApplication::translate("mainWindow", "ParticleSystem", 0, QApplication::UnicodeUTF8));
+    actionProcedural_Texture->setText(QApplication::translate("mainWindow", "Procedural Texture", 0, QApplication::UnicodeUTF8));
+    groupBox->setTitle(QApplication::translate("mainWindow", "Particle", 0, QApplication::UnicodeUTF8));
+    label->setText(QApplication::translate("mainWindow", "Alignement:", 0, QApplication::UnicodeUTF8));
+    comboBox->insertItems(0, QStringList()
+     << QApplication::translate("mainWindow", "Billboard", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("mainWindow", "Fixed", 0, QApplication::UnicodeUTF8)
+    );
+    label_2->setText(QApplication::translate("mainWindow", "Shape:", 0, QApplication::UnicodeUTF8));
+    comboBox_2->insertItems(0, QStringList()
+     << QApplication::translate("mainWindow", "Point", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("mainWindow", "Quad", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("mainWindow", "Hexagon", 0, QApplication::UnicodeUTF8)
+    );
+    label_3->setText(QApplication::translate("mainWindow", "Size:", 0, QApplication::UnicodeUTF8));
+    label_4->setText(QApplication::translate("mainWindow", "Life:", 0, QApplication::UnicodeUTF8));
+    label_5->setText(QApplication::translate("mainWindow", "Radius:", 0, QApplication::UnicodeUTF8));
+    label_6->setText(QApplication::translate("mainWindow", "Mass:", 0, QApplication::UnicodeUTF8));
+    tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("mainWindow", "Particles", 0, QApplication::UnicodeUTF8));
+    tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("mainWindow", "Textures", 0, QApplication::UnicodeUTF8));
+    menuFile->setTitle(QApplication::translate("mainWindow", "File", 0, QApplication::UnicodeUTF8));
+    menuNew->setTitle(QApplication::translate("mainWindow", "New", 0, QApplication::UnicodeUTF8));
+    toolBar->setWindowTitle(QApplication::translate("mainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
+    toolBar_2->setWindowTitle(QApplication::translate("mainWindow", "toolBar_2", 0, QApplication::UnicodeUTF8));
+    toolBar_3->setWindowTitle(QApplication::translate("mainWindow", "toolBar_3", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
-
-    class OSGPARTI_EXPORT MainWindow: public Ui_MainWindow {};
- // namespace Ui
+  class OSGPARTI_EXPORT MainWindow: public Ui_MainWindow {};
 
 }
+
+
 
 #endif // MAINWINDOW_H
