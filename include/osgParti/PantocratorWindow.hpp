@@ -1,11 +1,14 @@
 #ifndef _OSGPARTI_PANTOCRATORWINDOW_HPP_
 #define _OSGPARTI_PANTOCRATORWINDOW_HPP_ 1
+#define QT_NO_EMIT 
+
+#include <osgParti/ParticleSystem.hpp>
 #include <osg/Node>
 #include <osgParti/Export.hpp>
 #include <osgParti/MainWindow.hpp>
 #include <QtGui/QApplication>
 #include <QtGui/QWidget>
-//#include <osgParti/ParticleSystem.hpp>
+#include <osgGA/StateSetManipulator>
 
 //#include <QtGui/QFileDialog>
 

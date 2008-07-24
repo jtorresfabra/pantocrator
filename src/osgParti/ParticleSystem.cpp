@@ -56,7 +56,7 @@ ParticleSystem::ParticleSystem()
     Note that Particle System is a derived class of Drawable, thus we must
     add it to an osg::Geode before we may add it to the SceneGraph.
 */
-  particleSystem->setDefaultAttributes("data/scenes/smoke.png", true, false);
+  particleSystem->setDefaultAttributes("../include/images/smoke.png", true, false);
   particleSystem->setDefaultParticleTemplate(*defaultParticle);
   geode->addDrawable(particleSystem.get());
   root->addChild(geode.get());
@@ -156,7 +156,7 @@ ParticleSystem::ParticleSystem()
         it 10 units into the screen.
     */
   pat->addChild(emitter.get());	
-  pat->setPosition( osg::Vec3d(0.0, 0.0,100.0));
+  pat->setPosition( osg::Vec3d(0.0, 0.0,0.0));
 
   osgParticle::ModularProgram *moveDustInAir = new osgParticle::ModularProgram;
   moveDustInAir->setParticleSystem(particleSystem.get());

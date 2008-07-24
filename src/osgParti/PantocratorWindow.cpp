@@ -13,7 +13,12 @@ PantocratorWindow::PantocratorWindow():QMainWindow(),MainWindow()
 	setupUi(this);
 	connectSlots();
 	widget1->addEventHandler(new osgViewer::StatsHandler); 
+	widget1->addEventHandler(new osgViewer::HelpHandler); 
+	osg::ref_ptr<osgGA::StateSetManipulator> statesetManipulator = new osgGA::StateSetManipulator;
+	statesetManipulator->setStateSet(widget1->getCamera()->getOrCreateStateSet());
+	widget1->addEventHandler( statesetManipulator.get() );
 	root= new osg::Group();
+
 }
 void PantocratorWindow::open(){
 	QString fileName = QFileDialog::getOpenFileName(this);
@@ -27,15 +32,21 @@ bool PantocratorWindow::saveAs(){
 	return false;
 }
 void PantocratorWindow::newParticleSystem(){
-	
-	//osgParti::ParticleSystem* particleSystem= new ParticleSystem();
-	//root->addChild(particleSystem->getPat());
-    //root->addChild(particleSystem->getGroup());
-	//widget1->setSceneData(root.get());
+	std::cout<<"pasooo";
+	osgParti::ParticleSystem* particleSystem= new ParticleSystem();
+	particleSystem->setMinTheta(2.0);
+	particleSystem->setMaxTheta(4.0);
+	particleSystem->setMaxRGB(osg::Vec4f(1.0,1.0,1.0,0.7));
+	particleSystem->setMinRGB(osg::Vec4f(0.0,0.0,1.0,1.0));
+	root->addChild(particleSystem->getPat());
+    root->addChild(particleSystem->getGroup());
+//	widget1->setSceneData(root.get());
 }
 void PantocratorWindow::loadFile(const QString &fileName){
 	osg::ref_ptr<osg::Node> loadedModel = osgDB::readNodeFile(fileName.toStdString());
-	widget1->setSceneData(loadedModel.get());
+	root->addChild(loadedModel.get());
+	widget1->setSceneData(root.get());
+
 
 
 

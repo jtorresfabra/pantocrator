@@ -15,7 +15,7 @@
 *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 *  THE SOFTWARE.
 */
-
+#define QT_NO_EMIT
 #if USE_QT4
 
     #include <QtGui/QApplication>
