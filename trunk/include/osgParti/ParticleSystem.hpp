@@ -31,7 +31,7 @@ namespace osgParti {
 			ParticleSystem();
     		ParticleSystem(const ParticleSystem&,const osg::CopyOp& copyop=osg::CopyOp::SHALLOW_COPY) {}
 
-			META_Object(crsFX,ParticleSystem);
+			META_Object(osgParti,ParticleSystem);
     
     /*
         Returns the osg::Group node to be attached to the SceneGraph
@@ -154,10 +154,10 @@ namespace osgParti {
     void decMaxSpeed();
     
     osgParticle::rangef getSpeed() const;
-
+ ~ParticleSystem();
 protected:
     
-	 ~ParticleSystem();
+	
 	//Holds the Geode, and Updater
     osg::ref_ptr<osg::Group>                             root;
 
