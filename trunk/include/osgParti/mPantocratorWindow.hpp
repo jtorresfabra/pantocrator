@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'PantocratorWindow.hpp'
 **
-** Created: Fri Jul 25 17:16:59 2008
+** Created: Fri Jul 25 18:25:34 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   10, // methods
+       5,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
@@ -32,6 +32,7 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
       41,   28,   36,   28, 0x08,
       48,   28,   36,   28, 0x08,
       57,   28,   28,   28, 0x08,
+      79,   77,   28,   28, 0x08,
 
        0        // eod
 };
@@ -39,6 +40,7 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
 static const char qt_meta_stringdata_osgParti__PantocratorWindow[] = {
     "osgParti::PantocratorWindow\0\0open()\0"
     "bool\0save()\0saveAs()\0newParticleSystem()\0"
+    "i\0setShape(int)\0"
 };
 
 const QMetaObject osgParti::PantocratorWindow::staticMetaObject = {
@@ -74,8 +76,9 @@ int osgParti::PantocratorWindow::qt_metacall(QMetaObject::Call _c, int _id, void
         case 2: { bool _r = saveAs();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
         case 3: newParticleSystem(); break;
+        case 4: setShape((*reinterpret_cast< int(*)>(_a[1]))); break;
         }
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

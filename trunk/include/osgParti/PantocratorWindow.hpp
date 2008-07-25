@@ -24,7 +24,8 @@ namespace osgParti{
 		bool save();
     	bool saveAs();
 		void newParticleSystem();
-	
+		void setShape(int i);
+
 	public:
 		PantocratorWindow();
 		ViewerQT* getViewerQT(){return widget1;}
@@ -33,7 +34,7 @@ namespace osgParti{
 		void loadFile(const QString &fileName);
 		osg::ref_ptr<osg::Group>                             root;
 	protected:
-	
+		osg::ref_ptr<osgParti::ParticleSystem> particleSystem;
 		virtual ~PantocratorWindow(){}
 	};
 	
