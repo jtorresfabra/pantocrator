@@ -41,14 +41,14 @@ ParticleSystem::ParticleSystem()
   defaultParticle->setColorRange(
       osgParticle::rangev4(
           osg::Vec4f(0.0, 0.0, 0.0, 1.0),
-          osg::Vec4f(0.0, 0.0, 0.0, 1.0)
+          osg::Vec4f(1.0, 1.0, 1.0, 1.0)
       )
   );
     
   // Note that a lifetime of 0.0 will mean indefinite... the particle will never
   // die. This is bad because we still have to dedicate resources to the particles
   // throughout their lifetime. (In seconds)
-  defaultParticle->setLifeTime(100);
+  defaultParticle->setLifeTime(10);
     
 /*
     Particle System Properties - This is where we set the default particle.
@@ -128,7 +128,7 @@ ParticleSystem::ParticleSystem()
     */
   shooter->setThetaRange( osgParticle::rangef(0.01, 0.2));
   shooter->setPhiRange( osgParticle::rangef(0.0, 6.2));
-  shooter->setInitialSpeedRange( osgParticle::rangef(0.1, 10));
+  shooter->setInitialSpeedRange( osgParticle::rangef(0.1, 5));
     
 /*
     ModularEmitter - This class ties in 4 systems:
@@ -158,23 +158,23 @@ ParticleSystem::ParticleSystem()
   pat->addChild(emitter.get());	
   pat->setPosition( osg::Vec3d(0.0, 0.0,0.0));
 
-  osgParticle::ModularProgram *moveDustInAir = new osgParticle::ModularProgram;
-  moveDustInAir->setParticleSystem(particleSystem.get());
+ // osgParticle::ModularProgram *moveDustInAir = new osgParticle::ModularProgram;
+ // moveDustInAir->setParticleSystem(particleSystem.get());
 
   // Create an operator that simulates gravity, adjust it and add it to our program
-  osgParticle::AccelOperator *accelUp = new osgParticle::AccelOperator;
-  accelUp->setToGravity(9.8); // scale factor for normal acceleration due to gravity. 
-  moveDustInAir->addOperator(accelUp);
+  //osgParticle::AccelOperator *accelUp = new osgParticle::AccelOperator;
+  //accelUp->setToGravity(9.8); // scale factor for normal acceleration due to gravity. 
+  //moveDustInAir->addOperator(accelUp);
 
   // Add an operator to our program to calculate the friction of air.
-  osgParticle::FluidFrictionOperator *airFriction = new osgParticle::FluidFrictionOperator;
+  //osgParticle::FluidFrictionOperator *airFriction = new osgParticle::FluidFrictionOperator;
   //airFriction->setFluidViscosity(100.0f);
- airFriction->setFluidDensity(50);
+ //airFriction->setFluidDensity(50);
  // airFriction->setFluidDensity(1.2929/*air*/*5.0f);
-  moveDustInAir->addOperator(airFriction);
+  //moveDustInAir->addOperator(airFriction);
 //airFriction->setFluidToWater();
   // Finally, add the program to the scene 
-  root->addChild(moveDustInAir);
+  //root->addChild(moveDustInAir);
 
 
 
