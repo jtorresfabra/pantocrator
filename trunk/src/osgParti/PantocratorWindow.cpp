@@ -34,10 +34,10 @@ bool PantocratorWindow::saveAs(){
 void PantocratorWindow::newParticleSystem(){
 	std::cout<<"pasooo"<<std::endl;
 	particleSystem= new ParticleSystem();
-	particleSystem->setMinTheta(2.0);
-	particleSystem->setMaxTheta(4.0);
-	particleSystem->setMaxRGB(osg::Vec4f(1.0,1.0,1.0,0.7));
-	particleSystem->setMinRGB(osg::Vec4f(0.0,0.0,1.0,1.0));
+//	particleSystem->setMinTheta(2.0);
+//	particleSystem->setMaxTheta(4.0);
+//	particleSystem->setMaxRGB(osg::Vec4f(1.0,1.0,1.0,0.7));
+//	particleSystem->setMinRGB(osg::Vec4f(0.0,0.0,1.0,1.0));
 	root->addChild(particleSystem->getPat());
    	root->addChild(particleSystem->getGroup());
 	widget1->setSceneData(root.get());
@@ -62,6 +62,7 @@ void PantocratorWindow::connectSlots(){
     QObject::connect(comboBox_2, SIGNAL(currentIndexChanged(int)), this, SLOT(setShape(int)));
     QObject::connect(doubleSpinBox, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinSize(double)));
 	QObject::connect(doubleSpinBox_5, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxSize(double)));
+	QObject::connect(doubleSpinBox_2, SIGNAL(valueChanged(double)), this, SLOT(setParticleLife(double)));
 }
 void PantocratorWindow::setShape(int i){
 		
@@ -81,7 +82,12 @@ void PantocratorWindow::setParticleMaxSize(double maxsize){
 			particleSystem->setMaxSize(maxsize);
 		}
 	}
+void PantocratorWindow::setParticleLife(double life){
 
+			if (particleSystem!=NULL){
+				particleSystem->setLifeTime(life);
+			}
+		}
 
 
 
