@@ -33,7 +33,7 @@ bool PantocratorWindow::saveAs(){
 }
 void PantocratorWindow::newParticleSystem(){
 	std::cout<<"pasooo"<<std::endl;
-	osgParti::ParticleSystem* particleSystem= new ParticleSystem();
+	particleSystem= new ParticleSystem();
 	particleSystem->setMinTheta(2.0);
 	particleSystem->setMaxTheta(4.0);
 	particleSystem->setMaxRGB(osg::Vec4f(1.0,1.0,1.0,0.7));
@@ -43,7 +43,7 @@ void PantocratorWindow::newParticleSystem(){
 	widget1->setSceneData(root.get());
 }
 void PantocratorWindow::loadFile(const QString &fileName){
-	std::cout<<"pasooo2"<<std::endl;
+
 	osg::ref_ptr<osg::Node> loadedModel = osgDB::readNodeFile(fileName.toStdString());
 	root->addChild(loadedModel.get());
 	widget1->setSceneData(root.get());
@@ -51,14 +51,23 @@ void PantocratorWindow::loadFile(const QString &fileName){
 void PantocratorWindow::connectSlots(){
 
 //open
-  actionOpen->setShortcut(tr("Ctrl+O"));
-  actionOpen->setStatusTip(tr("Open an existing file"));
-  connect(actionOpen, SIGNAL(triggered()), this, SLOT(open()));
+  	actionOpen->setShortcut(tr("Ctrl+O"));
+  	actionOpen->setStatusTip(tr("Open an existing file"));
+  	connect(actionOpen, SIGNAL(triggered()), this, SLOT(open()));
 //new particleSystem
 	actionParticleSystem->setStatusTip(tr("New ParticleSystem defaults loaded"));
 	connect(actionParticleSystem, SIGNAL(triggered()), this, SLOT(newParticleSystem()));
-}
+//combobox    
 
+    QObject::connect(comboBox_2, SIGNAL(currentIndexChanged(int)), this, SLOT(setShape(int)));
+}
+void PantocratorWindow::setShape(int i){
+		
+	if (particleSystem!=NULL){
+		std::cout<<"pasooo2"<<std::endl;
+		particleSystem->setShape(i);
+	}
+}
 
 
 

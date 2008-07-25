@@ -189,7 +189,10 @@ osg::PositionAttitudeTransform* ParticleSystem::getPat(){
 }
 
 //EXTERNAL FUNCTIONALITY TO CHANGE PARTICLE PROPERTIES
-
+void ParticleSystem::setShape(int i){
+	defaultParticle->setShape((osgParticle::Particle::Shape)(i));
+	particleSystem->setDefaultParticleTemplate(*defaultParticle);
+}
 
 //Particle Colors ///////////////////////////////////////////////////
 void ParticleSystem::setMinRGB(const osg::Vec4f &color)

@@ -39,7 +39,7 @@
      <height>755</height>
     </rect>
    </property>
-   <widget class="QWidget" name="" >
+   <widget class="QWidget" name="layoutWidget" >
     <property name="geometry" >
      <rect>
       <x>0</x>
@@ -60,15 +60,6 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <zorder>comboBox</zorder>
-       <zorder>spinBox</zorder>
-       <zorder>spinBox</zorder>
-       <zorder>doubleSpinBox</zorder>
-       <zorder>comboBox_2</zorder>
-       <zorder>tabWidget</zorder>
-       <zorder>label_2</zorder>
-       <zorder>tabWidget</zorder>
-       <zorder>tabWidget</zorder>
       </widget>
      </item>
      <item>
@@ -204,12 +195,45 @@
            <widget class="QDoubleSpinBox" name="doubleSpinBox_4" />
           </item>
           <item row="2" column="3" >
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_5" />
+           <widget class="QDoubleSpinBox" name="doubleSpinBox_5" >
+            <property name="decimals" >
+             <number>1</number>
+            </property>
+            <property name="maximum" >
+             <double>50.000000000000000</double>
+            </property>
+            <property name="singleStep" >
+             <double>0.100000000000000</double>
+            </property>
+            <property name="value" >
+             <double>5.000000000000000</double>
+            </property>
+           </widget>
           </item>
           <item row="2" column="2" >
-           <widget class="QDoubleSpinBox" name="doubleSpinBox" />
+           <widget class="QDoubleSpinBox" name="doubleSpinBox" >
+            <property name="decimals" >
+             <number>1</number>
+            </property>
+            <property name="maximum" >
+             <double>50.000000000000000</double>
+            </property>
+           </widget>
           </item>
          </layout>
+         <zorder>label</zorder>
+         <zorder>comboBox</zorder>
+         <zorder>label_2</zorder>
+         <zorder>comboBox_2</zorder>
+         <zorder>label_3</zorder>
+         <zorder>label_4</zorder>
+         <zorder>doubleSpinBox_2</zorder>
+         <zorder>label_5</zorder>
+         <zorder>doubleSpinBox_3</zorder>
+         <zorder>label_6</zorder>
+         <zorder>doubleSpinBox_4</zorder>
+         <zorder>doubleSpinBox_5</zorder>
+         <zorder>doubleSpinBox</zorder>
         </widget>
        </widget>
        <widget class="QWidget" name="tab_2" >
@@ -218,7 +242,7 @@
           <x>0</x>
           <y>0</y>
           <width>305</width>
-          <height>711</height>
+          <height>710</height>
          </rect>
         </property>
         <attribute name="title" >
@@ -370,5 +394,38 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>comboBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>comboBox</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>815</x>
+     <y>146</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>814</x>
+     <y>146</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_2</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>comboBox_2</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>816</x>
+     <y>181</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>816</x>
+     <y>181</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
