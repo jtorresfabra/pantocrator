@@ -47,8 +47,8 @@ namespace osgParti {
         around in space dynamically.
     */
     osg::PositionAttitudeTransform* getPat();
-    
-    //Particle Colors //////////////////////////////////////////////////////////
+	void setShape(int i);
+ 	//Particle Colors //////////////////////////////////////////////////////////
     
 	void setMinRGB(const osg::Vec4f &color);
 	void setMaxRGB(const osg::Vec4f &color);
