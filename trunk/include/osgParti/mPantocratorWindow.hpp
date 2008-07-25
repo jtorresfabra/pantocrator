@@ -1,13 +1,13 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'PantocratorWindow.hpp'
 **
-** Created: Tue Jul 22 20:21:16 2008
+** Created: Fri Jul 25 17:16:59 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include <osgParti/PantocratorWindow.hpp>
+#include "PantocratorWindow.hpp"
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'PantocratorWindow.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 59

@@ -32,24 +32,21 @@ bool PantocratorWindow::saveAs(){
 	return false;
 }
 void PantocratorWindow::newParticleSystem(){
-	std::cout<<"pasooo";
+	std::cout<<"pasooo"<<std::endl;
 	osgParti::ParticleSystem* particleSystem= new ParticleSystem();
 	particleSystem->setMinTheta(2.0);
 	particleSystem->setMaxTheta(4.0);
 	particleSystem->setMaxRGB(osg::Vec4f(1.0,1.0,1.0,0.7));
 	particleSystem->setMinRGB(osg::Vec4f(0.0,0.0,1.0,1.0));
 	root->addChild(particleSystem->getPat());
-    root->addChild(particleSystem->getGroup());
-//	widget1->setSceneData(root.get());
+   	root->addChild(particleSystem->getGroup());
+	widget1->setSceneData(root.get());
 }
 void PantocratorWindow::loadFile(const QString &fileName){
+	std::cout<<"pasooo2"<<std::endl;
 	osg::ref_ptr<osg::Node> loadedModel = osgDB::readNodeFile(fileName.toStdString());
 	root->addChild(loadedModel.get());
 	widget1->setSceneData(root.get());
-
-
-
-
 }
 void PantocratorWindow::connectSlots(){
 
@@ -59,7 +56,7 @@ void PantocratorWindow::connectSlots(){
   connect(actionOpen, SIGNAL(triggered()), this, SLOT(open()));
 //new particleSystem
 	actionParticleSystem->setStatusTip(tr("New ParticleSystem defaults loaded"));
-	connect(actionOpen, SIGNAL(triggered()), this, SLOT(newParticleSystem()));
+	connect(actionParticleSystem, SIGNAL(triggered()), this, SLOT(newParticleSystem()));
 }
 
 
