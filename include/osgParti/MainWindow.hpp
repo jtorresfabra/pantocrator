@@ -171,8 +171,11 @@ public:
 
     doubleSpinBox_2 = new QDoubleSpinBox(groupBox);
     doubleSpinBox_2->setObjectName(QString::fromUtf8("doubleSpinBox_2"));
+	doubleSpinBox_2->setDecimals(1);
+    doubleSpinBox_2->setSingleStep(0.1);
+	doubleSpinBox_2->setValue(10.0);
 
-    gridLayout->addWidget(doubleSpinBox_2, 3, 3, 1, 1);
+   gridLayout->addWidget(doubleSpinBox_2, 3, 3, 1, 1);
 
     label_5 = new QLabel(groupBox);
     label_5->setObjectName(QString::fromUtf8("label_5"));
@@ -196,12 +199,18 @@ public:
 
     doubleSpinBox_5 = new QDoubleSpinBox(groupBox);
     doubleSpinBox_5->setObjectName(QString::fromUtf8("doubleSpinBox_5"));
-
-    gridLayout->addWidget(doubleSpinBox_5, 2, 3, 1, 1);
+ 	doubleSpinBox_5->setDecimals(1);
+    doubleSpinBox_5->setMaximum(50);
+    doubleSpinBox_5->setSingleStep(0.1);
+    doubleSpinBox_5->setValue(5);
+   
+ 	gridLayout->addWidget(doubleSpinBox_5, 2, 3, 1, 1);
 
     doubleSpinBox = new QDoubleSpinBox(groupBox);
     doubleSpinBox->setObjectName(QString::fromUtf8("doubleSpinBox"));
-
+	doubleSpinBox->setDecimals(1);
+    doubleSpinBox->setMaximum(50);
+    doubleSpinBox->setSingleStep(0.1);
     gridLayout->addWidget(doubleSpinBox, 2, 2, 1, 1);
 
     tabWidget->addTab(tab, QString());
@@ -273,7 +282,9 @@ public:
     comboBox_2->insertItems(0, QStringList()
      << QApplication::translate("mainWindow", "Point", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("mainWindow", "Quad", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("mainWindow", "Hexagon", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("mainWindow", "Quad strip", 0, QApplication::UnicodeUTF8)
+ 	<< QApplication::translate("mainWindow", "Hexagon", 0, QApplication::UnicodeUTF8)
+	<< QApplication::translate("mainWindow", "Line", 0, QApplication::UnicodeUTF8)
     );
     label_3->setText(QApplication::translate("mainWindow", "Size:", 0, QApplication::UnicodeUTF8));
     label_4->setText(QApplication::translate("mainWindow", "Life:", 0, QApplication::UnicodeUTF8));

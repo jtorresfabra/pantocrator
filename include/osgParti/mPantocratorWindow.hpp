@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'PantocratorWindow.hpp'
 **
-** Created: Fri Jul 25 19:32:24 2008
+** Created: Fri Jul 25 20:02:00 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   10, // methods
+       8,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
@@ -35,6 +35,7 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
       79,   77,   28,   28, 0x08,
      101,   93,   28,   28, 0x08,
      136,  128,   28,   28, 0x08,
+     168,  163,   28,   28, 0x08,
 
        0        // eod
 };
@@ -44,7 +45,8 @@ static const char qt_meta_stringdata_osgParti__PantocratorWindow[] = {
     "bool\0save()\0saveAs()\0newParticleSystem()\0"
     "i\0setShape(int)\0minsize\0"
     "setParticleMinSize(double)\0maxsize\0"
-    "setParticleMaxSize(double)\0"
+    "setParticleMaxSize(double)\0life\0"
+    "setParticleLife(double)\0"
 };
 
 const QMetaObject osgParti::PantocratorWindow::staticMetaObject = {
@@ -83,8 +85,9 @@ int osgParti::PantocratorWindow::qt_metacall(QMetaObject::Call _c, int _id, void
         case 4: setShape((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 5: setParticleMinSize((*reinterpret_cast< double(*)>(_a[1]))); break;
         case 6: setParticleMaxSize((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 7: setParticleLife((*reinterpret_cast< double(*)>(_a[1]))); break;
         }
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }
