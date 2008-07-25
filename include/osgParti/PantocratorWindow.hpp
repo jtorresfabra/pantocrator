@@ -25,7 +25,8 @@ namespace osgParti{
     	bool saveAs();
 		void newParticleSystem();
 		void setShape(int i);
-
+		void setParticleMinSize(double minsize);
+		void setParticleMaxSize(double maxsize);
 	public:
 		PantocratorWindow();
 		ViewerQT* getViewerQT(){return widget1;}

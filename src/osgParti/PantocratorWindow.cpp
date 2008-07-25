@@ -58,16 +58,31 @@ void PantocratorWindow::connectSlots(){
 	actionParticleSystem->setStatusTip(tr("New ParticleSystem defaults loaded"));
 	connect(actionParticleSystem, SIGNAL(triggered()), this, SLOT(newParticleSystem()));
 //combobox    
-
+	
     QObject::connect(comboBox_2, SIGNAL(currentIndexChanged(int)), this, SLOT(setShape(int)));
+    QObject::connect(doubleSpinBox, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinSize(double)));
+	QObject::connect(doubleSpinBox_5, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxSize(double)));
 }
 void PantocratorWindow::setShape(int i){
 		
 	if (particleSystem!=NULL){
-		std::cout<<"pasooo2"<<std::endl;
 		particleSystem->setShape(i);
 	}
 }
+void PantocratorWindow::setParticleMinSize(double minsize){
+		
+		if (particleSystem!=NULL){
+			particleSystem->setMinSize(minsize);
+		}
+	}
+void PantocratorWindow::setParticleMaxSize(double maxsize){
+		
+		if (particleSystem!=NULL){
+			particleSystem->setMaxSize(maxsize);
+		}
+	}
+
+
 
 
 
