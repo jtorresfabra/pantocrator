@@ -57,37 +57,46 @@ void PantocratorWindow::connectSlots(){
 //new particleSystem
 	actionParticleSystem->setStatusTip(tr("New ParticleSystem defaults loaded"));
 	connect(actionParticleSystem, SIGNAL(triggered()), this, SLOT(newParticleSystem()));
-//combobox    
-	
-    QObject::connect(shape_cb, SIGNAL(currentIndexChanged(int)), this, SLOT(setShape(int)));
-    QObject::connect(sizemin_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinSize(double)));
+//combobox
+	QObject::connect(shape_cb, SIGNAL(currentIndexChanged(int)), this, SLOT(setShape(int)));
+	QObject::connect(sizemin_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinSize(double)));
 	QObject::connect(sizemax_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxSize(double)));
 	QObject::connect(life_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleLife(double)));
+	QObject::connect(mass_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMass(double)));
+	QObject::connect(radius_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleRadius(double)));
+	QObject::connect(fromcolorButton, SIGNAL(clicked()), this, SLOT(setFromColor()));
+
+
 }
 void PantocratorWindow::setShape(int i){
-		
-	if (particleSystem!=NULL){
-		particleSystem->setShape(i);
-	}
+	if (particleSystem!=NULL)particleSystem->setShape(i);
 }
 void PantocratorWindow::setParticleMinSize(double minsize){
-		
-		if (particleSystem!=NULL){
-			particleSystem->setMinSize(minsize);
-		}
-	}
+	if (particleSystem!=NULL)particleSystem->setMinSize(minsize);
+}
 void PantocratorWindow::setParticleMaxSize(double maxsize){
-		
-		if (particleSystem!=NULL){
-			particleSystem->setMaxSize(maxsize);
-		}
-	}
+	if (particleSystem!=NULL)particleSystem->setMaxSize(maxsize);	
+}
 void PantocratorWindow::setParticleLife(double life){
+	if (particleSystem!=NULL)particleSystem->setLifeTime(life);
+}
+void PantocratorWindow::setParticleMass(double mass){
+	if (particleSystem!=NULL)particleSystem->setMass(mass);
+}
+void PantocratorWindow::setParticleRadius(double radius){
+	if (particleSystem!=NULL)particleSystem->setRadius(radius);
+}
+void PantocratorWindow::setFromColor(){
+  QColor color = QColorDialog::getColor(Qt::green, this);
+     //if (color.isValid()) {
+       //  colorLabel->setText(color.name());
+        // colorLabel->setPalette(QPalette(color));
+        // colorLabel->setAutoFillBackground(true);
+     }
+ 
 
-			if (particleSystem!=NULL){
-				particleSystem->setLifeTime(life);
-			}
-		}
+
+
 
 
 

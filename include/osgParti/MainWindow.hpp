@@ -57,7 +57,7 @@ public:
     QLabel *label_4;
     QDoubleSpinBox *life_sb;
     QLabel *label_5;
-    QDoubleSpinBox *doubleSpinBox_3;
+    QDoubleSpinBox *radius_sb;
     QLabel *label_6;
     QDoubleSpinBox *mass_sb;
     QDoubleSpinBox *sizemax_sb;
@@ -193,10 +193,10 @@ public:
 
     gridLayout->addWidget(label_5, 4, 0, 1, 1);
 
-    doubleSpinBox_3 = new QDoubleSpinBox(groupBox);
-    doubleSpinBox_3->setObjectName(QString::fromUtf8("doubleSpinBox_3"));
+    radius_sb = new QDoubleSpinBox(groupBox);
+    radius_sb->setObjectName(QString::fromUtf8("radius_sb"));
 
-    gridLayout->addWidget(doubleSpinBox_3, 4, 3, 1, 1);
+    gridLayout->addWidget(radius_sb, 4, 3, 1, 1);
 
     label_6 = new QLabel(groupBox);
     label_6->setObjectName(QString::fromUtf8("label_6"));
