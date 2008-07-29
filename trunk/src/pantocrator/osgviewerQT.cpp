@@ -25,7 +25,7 @@
 #endif
 
 #include <osg/ArgumentParser>
-
+#include <osgParti/PantocratorWindow.hpp>
 #include <iostream>
 #include <osg/Node>
 
@@ -41,7 +41,7 @@
 #include <osgParti/QOSGWidget.hpp>	
 #include <QtGui/QMainWindow>
 #include <osgParti/AdapterWidget.hpp>	
-#include <osgParti/PantocratorWindow.hpp>
+
 
 #include <iostream>
 using namespace osgParti;
@@ -88,9 +88,9 @@ int main( int argc, char **argv )
 		PantocratorWindow* window = new PantocratorWindow();
 		ViewerQT* viewerWindow = window->getViewerQT();
 		window->show();
-        viewerWindow->setCameraManipulator(new osgGA::TrackballManipulator);
+	        viewerWindow->setCameraManipulator(new osgGA::TrackballManipulator);
 		viewerWindow->setSceneData(loadedModel.get());
-        viewerWindow->show();
+	        viewerWindow->show();
 
       
         

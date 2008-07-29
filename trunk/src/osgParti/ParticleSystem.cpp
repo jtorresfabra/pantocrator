@@ -56,7 +56,7 @@ ParticleSystem::ParticleSystem()
     Note that Particle System is a derived class of Drawable, thus we must
     add it to an osg::Geode before we may add it to the SceneGraph.
 */
-  particleSystem->setDefaultAttributes("../include/images/smoke.png", true, false);
+  particleSystem->setDefaultAttributes("/home/jtorres/Projects/demos/svn/crsFX/trunk/examples/theborn/data/scenes/smoke.png", true, false);
   particleSystem->setDefaultParticleTemplate(*defaultParticle);
   geode->addDrawable(particleSystem.get());
   root->addChild(geode.get());
@@ -191,6 +191,14 @@ osg::PositionAttitudeTransform* ParticleSystem::getPat(){
 //EXTERNAL FUNCTIONALITY TO CHANGE PARTICLE PROPERTIES
 void ParticleSystem::setShape(int i){
 	defaultParticle->setShape((osgParticle::Particle::Shape)(i));
+	particleSystem->setDefaultParticleTemplate(*defaultParticle);
+}
+void ParticleSystem::setMass(float mass){
+	defaultParticle->setMass(mass);
+	particleSystem->setDefaultParticleTemplate(*defaultParticle);
+}
+void ParticleSystem::setRadius(float radius){
+	defaultParticle->setRadius(radius);
 	particleSystem->setDefaultParticleTemplate(*defaultParticle);
 }
 

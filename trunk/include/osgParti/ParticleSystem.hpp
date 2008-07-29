@@ -46,9 +46,13 @@ namespace osgParti {
         in this manner, it would be easy later grab this PAT and translate it
         around in space dynamically.
     */
-    osg::PositionAttitudeTransform* getPat();
+        osg::PositionAttitudeTransform* getPat();
 	void setShape(int i);
- 	//Particle Colors //////////////////////////////////////////////////////////
+ 	void setMass(float mass);
+	void setRadius(float radius);
+
+
+	//Particle Colors //////////////////////////////////////////////////////////
     
 	void setMinRGB(const osg::Vec4f &color);
 	void setMaxRGB(const osg::Vec4f &color);

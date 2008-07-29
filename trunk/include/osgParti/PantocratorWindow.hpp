@@ -9,7 +9,7 @@
 #include <QtGui/QApplication>
 #include <QtGui/QWidget>
 #include <osgGA/StateSetManipulator>
-
+#include <QtGui/QColorDialog>
 //#include <QtGui/QFileDialog>
 
 
@@ -22,12 +22,15 @@ namespace osgParti{
 	private slots:
 		void open();
 		bool save();
-    	bool saveAs();
+    		bool saveAs();
 		void newParticleSystem();
 		void setShape(int i);
 		void setParticleMinSize(double minsize);
 		void setParticleMaxSize(double maxsize);
 		void setParticleLife(double life);
+		void setParticleMass(double mass);
+		void setParticleRadius(double radius);
+		void setFromColor();
 	public:
 		PantocratorWindow();
 		ViewerQT* getViewerQT(){return osgwidget;}
