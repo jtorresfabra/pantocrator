@@ -30,7 +30,7 @@ namespace osgParti{
 		void setParticleLife(double life);
 	public:
 		PantocratorWindow();
-		ViewerQT* getViewerQT(){return widget1;}
+		ViewerQT* getViewerQT(){return osgwidget;}
 		
 		void connectSlots();
 		void loadFile(const QString &fileName);
