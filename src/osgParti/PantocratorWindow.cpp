@@ -12,11 +12,11 @@ PantocratorWindow::PantocratorWindow():QMainWindow(),MainWindow()
  	
 	setupUi(this);
 	connectSlots();
-	widget1->addEventHandler(new osgViewer::StatsHandler); 
-	widget1->addEventHandler(new osgViewer::HelpHandler); 
+	osgwidget->addEventHandler(new osgViewer::StatsHandler); 
+	osgwidget->addEventHandler(new osgViewer::HelpHandler); 
 	osg::ref_ptr<osgGA::StateSetManipulator> statesetManipulator = new osgGA::StateSetManipulator;
-	statesetManipulator->setStateSet(widget1->getCamera()->getOrCreateStateSet());
-	widget1->addEventHandler( statesetManipulator.get() );
+	statesetManipulator->setStateSet(osgwidget->getCamera()->getOrCreateStateSet());
+	osgwidget->addEventHandler( statesetManipulator.get() );
 	root= new osg::Group();
 
 }
@@ -40,13 +40,13 @@ void PantocratorWindow::newParticleSystem(){
 //	particleSystem->setMinRGB(osg::Vec4f(0.0,0.0,1.0,1.0));
 	root->addChild(particleSystem->getPat());
    	root->addChild(particleSystem->getGroup());
-	widget1->setSceneData(root.get());
+	osgwidget->setSceneData(root.get());
 }
 void PantocratorWindow::loadFile(const QString &fileName){
 
 	osg::ref_ptr<osg::Node> loadedModel = osgDB::readNodeFile(fileName.toStdString());
 	root->addChild(loadedModel.get());
-	widget1->setSceneData(root.get());
+	osgwidget->setSceneData(root.get());
 }
 void PantocratorWindow::connectSlots(){
 
@@ -59,10 +59,10 @@ void PantocratorWindow::connectSlots(){
 	connect(actionParticleSystem, SIGNAL(triggered()), this, SLOT(newParticleSystem()));
 //combobox    
 	
-    QObject::connect(comboBox_2, SIGNAL(currentIndexChanged(int)), this, SLOT(setShape(int)));
-    QObject::connect(doubleSpinBox, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinSize(double)));
-	QObject::connect(doubleSpinBox_5, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxSize(double)));
-	QObject::connect(doubleSpinBox_2, SIGNAL(valueChanged(double)), this, SLOT(setParticleLife(double)));
+    QObject::connect(shape_cb, SIGNAL(currentIndexChanged(int)), this, SLOT(setShape(int)));
+    QObject::connect(sizemin_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinSize(double)));
+	QObject::connect(sizemax_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxSize(double)));
+	QObject::connect(life_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleLife(double)));
 }
 void PantocratorWindow::setShape(int i){
 		
