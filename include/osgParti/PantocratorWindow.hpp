@@ -10,7 +10,7 @@
 #include <QtGui/QWidget>
 #include <osgGA/StateSetManipulator>
 #include <QtGui/QColorDialog>
-//#include <QtGui/QFileDialog>
+
 
 
 namespace osgParti{
@@ -31,6 +31,9 @@ namespace osgParti{
 		void setParticleMass(double mass);
 		void setParticleRadius(double radius);
 		void setFromColor();
+		void setToColor();
+		void setParticleTheta(int theta);
+
 	public:
 		PantocratorWindow();
 		ViewerQT* getViewerQT(){return osgwidget;}

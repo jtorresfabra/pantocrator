@@ -65,7 +65,8 @@ void PantocratorWindow::connectSlots(){
 	QObject::connect(mass_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMass(double)));
 	QObject::connect(radius_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleRadius(double)));
 	QObject::connect(fromcolorButton, SIGNAL(clicked()), this, SLOT(setFromColor()));
-
+	QObject::connect(tocolorButton, SIGNAL(clicked()), this, SLOT(setToColor()));
+	QObject::connect(phiSlider, SIGNAL(sliderMoved(int)), this, SLOT(setParticleTheta(int)));
 
 }
 void PantocratorWindow::setShape(int i){
@@ -87,16 +88,20 @@ void PantocratorWindow::setParticleRadius(double radius){
 	if (particleSystem!=NULL)particleSystem->setRadius(radius);
 }
 void PantocratorWindow::setFromColor(){
-  QColor color = QColorDialog::getColor(Qt::green, this);
-     //if (color.isValid()) {
-       //  colorLabel->setText(color.name());
-        // colorLabel->setPalette(QPalette(color));
-        // colorLabel->setAutoFillBackground(true);
-     }
- 
-
-
-
+ 	if (particleSystem!=NULL){
+	QColor color = QColorDialog::getRgba();
+	particleSystem->setMinRGB(osg::Vec4f (color.redF(),color.greenF(),color.blueF(),color.alphaF()));
+    } 
+}
+void PantocratorWindow::setToColor(){
+ 	if (particleSystem!=NULL){
+	QColor color = QColorDialog::getRgba();
+	particleSystem->setMaxRGB(osg::Vec4f (color.redF(),color.greenF(),color.blueF(),color.alphaF()));
+    } 
+}
+void PantocratorWindow::setParticleTheta(int theta){
+	if (particleSystem!=NULL)particleSystem->setMinPhi((float)(theta));
+}
 
 
 
