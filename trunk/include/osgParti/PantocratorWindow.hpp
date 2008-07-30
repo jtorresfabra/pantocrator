@@ -38,6 +38,8 @@ namespace osgParti{
 		void setParticleMaxSpeed(double maxspeed);
 		void setParticleMinCount(double mincount);
 		void setParticleMaxCount(double maxcount);
+		void setParticlePlacer(int placer);
+	
 	
 	public:
 		PantocratorWindow();
