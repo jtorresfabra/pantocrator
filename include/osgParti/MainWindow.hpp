@@ -454,8 +454,8 @@ public:
     label_10->setText(QApplication::translate("mainWindow", "Color", 0, QApplication::UnicodeUTF8));
     emitter_gr->setTitle(QApplication::translate("mainWindow", "Emitter", 0, QApplication::UnicodeUTF8));
     placer_cb->insertItems(0, QStringList()
-     << QApplication::translate("mainWindow", "Box ", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("mainWindow", "Point", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("mainWindow", "Box", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("mainWindow", "Sector", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("mainWindow", "MultiSegment", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("mainWindow", "Segment", 0, QApplication::UnicodeUTF8)

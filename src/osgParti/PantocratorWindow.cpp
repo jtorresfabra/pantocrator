@@ -2,7 +2,7 @@
 #include <iostream>
 #include <QtGui/QFileDialog>
 #include <osg/View>
-
+#include <osgParticle/PointPlacer>
 
 using namespace osgParti;
 
@@ -72,6 +72,7 @@ void PantocratorWindow::connectSlots(){
 	QObject::connect(speedmax_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxSpeed(double)));
 	QObject::connect(countermin_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinCount(double)));
 	QObject::connect(countermax_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxCount(double)));
+	QObject::connect(placer_cb, SIGNAL(currentIndexChanged(int)), this, SLOT(setParticlePlacer(int)));
 }
 void PantocratorWindow::setParticleAlignment(int i){
 	if (particleSystem!=NULL)
@@ -124,5 +125,18 @@ void PantocratorWindow::setParticleMinCount(double mincount){
 void PantocratorWindow::setParticleMaxCount(double maxcount){
 	if (particleSystem!=NULL)particleSystem->setMaxRate(maxcount);
 }
-
+void PantocratorWindow::setParticlePlacer(int placer){
+		if (particleSystem!=NULL)
+			switch(placer){
+				case 0:
+				particleSystem->setPlacer(new osgParticle::PointPlacer());
+				break;
+				case 1:
+				particleSystem->setPlacer(new osgParticle::BoxPlacer());
+				break;
+			
+			
+			
+		}
+}
 

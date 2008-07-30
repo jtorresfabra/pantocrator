@@ -17,7 +17,7 @@ ParticleSystem::ParticleSystem()
 	  defaultParticle(new osgParticle::Particle()),
 	  updater(new osgParticle::ParticleSystemUpdater()),
 	  rateCounter((osgParticle::RandomRateCounter*)emitter->getCounter()),
-	  placer((osgParticle::PointPlacer*)emitter->getPlacer()),
+	  placer(emitter->getPlacer()),
 	  shooter((osgParticle::RadialShooter*)emitter->getShooter()),
 	  pat(new osg::PositionAttitudeTransform())
   {
@@ -1006,4 +1006,6 @@ void ParticleSystem::decMaxSpeed(){
 osgParticle::rangef ParticleSystem::getSpeed() const{
     return shooter->getInitialSpeedRange();
 }
-
+void ParticleSystem::setPlacer(osgParticle::Placer *placer){
+	emitter->setPlacer(placer);
+}

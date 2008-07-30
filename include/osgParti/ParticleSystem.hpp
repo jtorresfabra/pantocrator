@@ -16,6 +16,7 @@
 #include <osgParticle/RandomRateCounter>
 #include <osgParticle/PointPlacer>
 #include <osgParticle/RadialShooter>
+#include <osgParticle/BoxPlacer>
 /*
     SDL Includes
 */
@@ -156,9 +157,11 @@ namespace osgParti {
     void incMaxSpeed();
     void decMinSpeed();
     void decMaxSpeed();
-    
     osgParticle::rangef getSpeed() const;
- ~ParticleSystem();
+ 
+	void setPlacer(osgParticle::Placer* placer);
+
+~ParticleSystem();
 protected:
     
 	
@@ -184,7 +187,7 @@ protected:
     osg::ref_ptr<osgParticle::RandomRateCounter>         rateCounter;
     
     //Defines particles spawning from a single point in space
-    osg::ref_ptr<osgParticle::PointPlacer>               placer;
+    osg::ref_ptr<osgParticle::Placer>               placer;
     
     //Shoots particles out in a radial fashion
    osg::ref_ptr<osgParticle::RadialShooter>             shooter;

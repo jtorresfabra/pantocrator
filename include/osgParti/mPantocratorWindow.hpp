@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'PantocratorWindow.hpp'
 **
-** Created: Wed Jul 30 19:48:55 2008
+** Created: Wed Jul 30 20:31:24 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   10, // methods
+      19,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
@@ -46,6 +46,7 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
      382,  373,   28,   28, 0x08,
      419,  410,   28,   28, 0x08,
      456,  447,   28,   28, 0x08,
+     491,  484,   28,   28, 0x08,
 
        0        // eod
 };
@@ -64,6 +65,7 @@ static const char qt_meta_stringdata_osgParti__PantocratorWindow[] = {
     "maxspeed\0setParticleMaxSpeed(double)\0"
     "mincount\0setParticleMinCount(double)\0"
     "maxcount\0setParticleMaxCount(double)\0"
+    "placer\0setParticlePlacer(int)\0"
 };
 
 const QMetaObject osgParti::PantocratorWindow::staticMetaObject = {
@@ -113,8 +115,9 @@ int osgParti::PantocratorWindow::qt_metacall(QMetaObject::Call _c, int _id, void
         case 15: setParticleMaxSpeed((*reinterpret_cast< double(*)>(_a[1]))); break;
         case 16: setParticleMinCount((*reinterpret_cast< double(*)>(_a[1]))); break;
         case 17: setParticleMaxCount((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 18: setParticlePlacer((*reinterpret_cast< int(*)>(_a[1]))); break;
         }
-        _id -= 18;
+        _id -= 19;
     }
     return _id;
 }
