@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'PantocratorWindow.hpp'
 **
-** Created: Wed Jul 30 00:50:03 2008
+** Created: Wed Jul 30 19:48:55 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   10, // methods
+      18,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
@@ -32,15 +32,20 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
       41,   28,   36,   28, 0x08,
       48,   28,   36,   28, 0x08,
       57,   28,   28,   28, 0x08,
-      79,   77,   28,   28, 0x08,
-     101,   93,   28,   28, 0x08,
-     136,  128,   28,   28, 0x08,
-     168,  163,   28,   28, 0x08,
-     197,  192,   28,   28, 0x08,
-     228,  221,   28,   28, 0x08,
-     254,   28,   28,   28, 0x08,
-     269,   28,   28,   28, 0x08,
-     288,  282,   28,   28, 0x08,
+      77,   28,   28,   28, 0x08,
+     105,  103,   28,   28, 0x08,
+     127,  119,   28,   28, 0x08,
+     162,  154,   28,   28, 0x08,
+     194,  189,   28,   28, 0x08,
+     223,  218,   28,   28, 0x08,
+     254,  247,   28,   28, 0x08,
+     280,   28,   28,   28, 0x08,
+     295,   28,   28,   28, 0x08,
+     314,  308,   28,   28, 0x08,
+     345,  336,   28,   28, 0x08,
+     382,  373,   28,   28, 0x08,
+     419,  410,   28,   28, 0x08,
+     456,  447,   28,   28, 0x08,
 
        0        // eod
 };
@@ -48,13 +53,17 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
 static const char qt_meta_stringdata_osgParti__PantocratorWindow[] = {
     "osgParti::PantocratorWindow\0\0open()\0"
     "bool\0save()\0saveAs()\0newParticleSystem()\0"
-    "i\0setShape(int)\0minsize\0"
-    "setParticleMinSize(double)\0maxsize\0"
-    "setParticleMaxSize(double)\0life\0"
-    "setParticleLife(double)\0mass\0"
+    "setParticleAlignment(int)\0i\0setShape(int)\0"
+    "minsize\0setParticleMinSize(double)\0"
+    "maxsize\0setParticleMaxSize(double)\0"
+    "life\0setParticleLife(double)\0mass\0"
     "setParticleMass(double)\0radius\0"
     "setParticleRadius(double)\0setFromColor()\0"
     "setToColor()\0theta\0setParticleTheta(int)\0"
+    "minspeed\0setParticleMinSpeed(double)\0"
+    "maxspeed\0setParticleMaxSpeed(double)\0"
+    "mincount\0setParticleMinCount(double)\0"
+    "maxcount\0setParticleMaxCount(double)\0"
 };
 
 const QMetaObject osgParti::PantocratorWindow::staticMetaObject = {
@@ -90,17 +99,22 @@ int osgParti::PantocratorWindow::qt_metacall(QMetaObject::Call _c, int _id, void
         case 2: { bool _r = saveAs();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
         case 3: newParticleSystem(); break;
-        case 4: setShape((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 5: setParticleMinSize((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 6: setParticleMaxSize((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 7: setParticleLife((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 8: setParticleMass((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 9: setParticleRadius((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 10: setFromColor(); break;
-        case 11: setToColor(); break;
-        case 12: setParticleTheta((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: setParticleAlignment((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 5: setShape((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: setParticleMinSize((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 7: setParticleMaxSize((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 8: setParticleLife((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 9: setParticleMass((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 10: setParticleRadius((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 11: setFromColor(); break;
+        case 12: setToColor(); break;
+        case 13: setParticleTheta((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: setParticleMinSpeed((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 15: setParticleMaxSpeed((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 16: setParticleMinCount((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 17: setParticleMaxCount((*reinterpret_cast< double(*)>(_a[1]))); break;
         }
-        _id -= 13;
+        _id -= 18;
     }
     return _id;
 }

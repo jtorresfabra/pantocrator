@@ -22,8 +22,9 @@ namespace osgParti{
 	private slots:
 		void open();
 		bool save();
-    		bool saveAs();
+    	bool saveAs();
 		void newParticleSystem();
+		void setParticleAlignment(int);
 		void setShape(int i);
 		void setParticleMinSize(double minsize);
 		void setParticleMaxSize(double maxsize);
@@ -33,7 +34,11 @@ namespace osgParti{
 		void setFromColor();
 		void setToColor();
 		void setParticleTheta(int theta);
-
+		void setParticleMinSpeed(double minspeed);
+		void setParticleMaxSpeed(double maxspeed);
+		void setParticleMinCount(double mincount);
+		void setParticleMaxCount(double maxcount);
+	
 	public:
 		PantocratorWindow();
 		ViewerQT* getViewerQT(){return osgwidget;}
