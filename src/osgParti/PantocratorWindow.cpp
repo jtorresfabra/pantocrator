@@ -58,6 +58,7 @@ void PantocratorWindow::connectSlots(){
 	actionParticleSystem->setStatusTip(tr("New ParticleSystem defaults loaded"));
 	connect(actionParticleSystem, SIGNAL(triggered()), this, SLOT(newParticleSystem()));
 //combobox
+	QObject::connect(alignment_cb, SIGNAL(currentIndexChanged(int)), this, SLOT(setParticleAlignment(int)));
 	QObject::connect(shape_cb, SIGNAL(currentIndexChanged(int)), this, SLOT(setShape(int)));
 	QObject::connect(sizemin_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinSize(double)));
 	QObject::connect(sizemax_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxSize(double)));
@@ -67,7 +68,16 @@ void PantocratorWindow::connectSlots(){
 	QObject::connect(fromcolorButton, SIGNAL(clicked()), this, SLOT(setFromColor()));
 	QObject::connect(tocolorButton, SIGNAL(clicked()), this, SLOT(setToColor()));
 	QObject::connect(phiSlider, SIGNAL(sliderMoved(int)), this, SLOT(setParticleTheta(int)));
-
+	QObject::connect(speedmin_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinSpeed(double)));
+	QObject::connect(speedmax_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxSpeed(double)));
+	QObject::connect(countermin_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinCount(double)));
+	QObject::connect(countermax_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxCount(double)));
+}
+void PantocratorWindow::setParticleAlignment(int i){
+	if (particleSystem!=NULL)
+		std::cout<<"i"<<i;
+		if (i==1)particleSystem->setAlignmentFixed();
+		else particleSystem->setAlignmentBillboard();
 }
 void PantocratorWindow::setShape(int i){
 	if (particleSystem!=NULL)particleSystem->setShape(i);
@@ -100,10 +110,19 @@ void PantocratorWindow::setToColor(){
     } 
 }
 void PantocratorWindow::setParticleTheta(int theta){
-	if (particleSystem!=NULL)particleSystem->setMinPhi((float)(theta));
+	if (particleSystem!=NULL)particleSystem->setMinTheta((float)(theta));
 }
-
-
-
+void PantocratorWindow::setParticleMinSpeed(double minspeed){
+	if (particleSystem!=NULL)particleSystem->setMinSpeed(minspeed);
+}
+void PantocratorWindow::setParticleMaxSpeed(double maxspeed){
+	if (particleSystem!=NULL)particleSystem->setMaxSpeed(maxspeed);
+}
+void PantocratorWindow::setParticleMinCount(double mincount){
+	if (particleSystem!=NULL)particleSystem->setMinRate(mincount);
+}
+void PantocratorWindow::setParticleMaxCount(double maxcount){
+	if (particleSystem!=NULL)particleSystem->setMaxRate(maxcount);
+}
 
 
