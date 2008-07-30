@@ -77,7 +77,7 @@ public:
     QScrollBar *thetaSlider;
     QLabel *label_11;
     QLabel *label_12;
-    QScrollBar *phiSlider;
+    QSlider *phiSlider;
     QLabel *label_13;
     QWidget *layoutWidget_3;
     QHBoxLayout *horizontalLayout_3;
@@ -288,11 +288,15 @@ public:
     label_12 = new QLabel(radialshooter_gr);
     label_12->setObjectName(QString::fromUtf8("label_12"));
     label_12->setGeometry(QRect(10, 70, 51, 18));
-    phiSlider = new QScrollBar(radialshooter_gr);
+    phiSlider = new QSlider(radialshooter_gr);
     phiSlider->setObjectName(QString::fromUtf8("phiSlider"));
     phiSlider->setGeometry(QRect(70, 70, 160, 16));
     phiSlider->setOrientation(Qt::Horizontal);
-    label_13 = new QLabel(radialshooter_gr);
+	phiSlider->setMaximum(50);
+	phiSlider->setMinimum(0);
+	phiSlider->setTickInterval(10);	
+	phiSlider->setTickPosition(QSlider::TicksAbove);		
+	label_13 = new QLabel(radialshooter_gr);
     label_13->setObjectName(QString::fromUtf8("label_13"));
     label_13->setGeometry(QRect(10, 100, 51, 18));
     layoutWidget_3 = new QWidget(radialshooter_gr);
