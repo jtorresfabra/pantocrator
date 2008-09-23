@@ -1,0 +1,2150 @@
+<ui version="4.0" >
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1004</width>
+    <height>836</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>503</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>MainWindow</string>
+  </property>
+  <property name="iconSize" >
+   <size>
+    <width>25</width>
+    <height>25</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>59</y>
+     <width>1004</width>
+     <height>755</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_7" >
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" >
+      <property name="margin" >
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="ViewerQT" native="1" name="osgwidget" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <zorder>color_gr</zorder>
+        <zorder>color_gr</zorder>
+        <zorder>toolButton_4</zorder>
+        <zorder>toolButton_8</zorder>
+        <zorder>toolButton_10</zorder>
+        <zorder>toolButton_9</zorder>
+        <zorder>toolButton_7</zorder>
+        <zorder>color_gr</zorder>
+        <zorder>label_11</zorder>
+        <zorder>density_sb</zorder>
+        <zorder>label_26</zorder>
+        <zorder>viscosity</zorder>
+        <zorder>color_gr</zorder>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="color_gr" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Expanding" hsizetype="Preferred" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize" >
+         <size>
+          <width>311</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="currentIndex" >
+         <number>0</number>
+        </property>
+        <property name="iconSize" >
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+        <widget class="QWidget" name="tab" >
+         <property name="geometry" >
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>305</width>
+           <height>700</height>
+          </rect>
+         </property>
+         <attribute name="title" >
+          <string>Particles</string>
+         </attribute>
+         <widget class="QGroupBox" name="groupBox" >
+          <property name="geometry" >
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>261</width>
+            <height>301</height>
+           </rect>
+          </property>
+          <property name="title" >
+           <string>Particle</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout" >
+           <item row="1" column="0" >
+            <widget class="QLabel" name="label_2" >
+             <property name="text" >
+              <string>Shape:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2" colspan="2" >
+            <widget class="QComboBox" name="shape_cb" >
+             <property name="autoFillBackground" >
+              <bool>false</bool>
+             </property>
+             <item>
+              <property name="text" >
+               <string>Point</string>
+              </property>
+             </item>
+             <item>
+              <property name="text" >
+               <string>Quad</string>
+              </property>
+             </item>
+             <item>
+              <property name="text" >
+               <string>Quad Strip</string>
+              </property>
+             </item>
+             <item>
+              <property name="text" >
+               <string>Hexagon</string>
+              </property>
+             </item>
+             <item>
+              <property name="text" >
+               <string>Line</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="2" column="0" >
+            <widget class="QLabel" name="label_3" >
+             <property name="text" >
+              <string>Size:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0" >
+            <widget class="QLabel" name="label_4" >
+             <property name="text" >
+              <string>Life:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3" >
+            <widget class="QDoubleSpinBox" name="life_sb" />
+           </item>
+           <item row="4" column="0" >
+            <widget class="QLabel" name="label_5" >
+             <property name="text" >
+              <string>Radius:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="3" >
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_3" />
+           </item>
+           <item row="5" column="0" >
+            <widget class="QLabel" name="label_6" >
+             <property name="text" >
+              <string>Mass:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="3" >
+            <widget class="QDoubleSpinBox" name="mass_sb" />
+           </item>
+           <item row="2" column="3" >
+            <widget class="QDoubleSpinBox" name="sizemax_sb" >
+             <property name="decimals" >
+              <number>1</number>
+             </property>
+             <property name="maximum" >
+              <double>50.000000000000000</double>
+             </property>
+             <property name="singleStep" >
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value" >
+              <double>5.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2" >
+            <widget class="QDoubleSpinBox" name="sizemin_sb" >
+             <property name="decimals" >
+              <number>1</number>
+             </property>
+             <property name="maximum" >
+              <double>50.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" >
+            <widget class="QLabel" name="label" >
+             <property name="text" >
+              <string>Alignement:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2" colspan="2" >
+            <widget class="QComboBox" name="alignment_cb" >
+             <property name="autoFillBackground" >
+              <bool>false</bool>
+             </property>
+             <item>
+              <property name="text" >
+               <string>Billboard</string>
+              </property>
+             </item>
+             <item>
+              <property name="text" >
+               <string>Fixed</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="6" column="2" colspan="2" >
+            <layout class="QHBoxLayout" name="horizontalLayout_2" >
+             <item>
+              <widget class="QLabel" name="label_8" >
+               <property name="text" >
+                <string>From:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="fromcolorButton" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_9" >
+               <property name="text" >
+                <string>To:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="tocolorButton" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="6" column="0" >
+            <widget class="QLabel" name="label_10" >
+             <property name="text" >
+              <string>Color</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QGroupBox" name="emitter_gr" >
+          <property name="geometry" >
+           <rect>
+            <x>20</x>
+            <y>320</y>
+            <width>261</width>
+            <height>371</height>
+           </rect>
+          </property>
+          <property name="title" >
+           <string>Emitter</string>
+          </property>
+          <widget class="QComboBox" name="placer_cb" >
+           <property name="geometry" >
+            <rect>
+             <x>100</x>
+             <y>30</y>
+             <width>153</width>
+             <height>26</height>
+            </rect>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text" >
+             <string>Box </string>
+            </property>
+           </item>
+           <item>
+            <property name="text" >
+             <string>Point</string>
+            </property>
+           </item>
+           <item>
+            <property name="text" >
+             <string>Sector</string>
+            </property>
+           </item>
+           <item>
+            <property name="text" >
+             <string>MultiSegment</string>
+            </property>
+           </item>
+           <item>
+            <property name="text" >
+             <string>Segment</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QLabel" name="label_7" >
+           <property name="geometry" >
+            <rect>
+             <x>19</x>
+             <y>32</y>
+             <width>81</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text" >
+            <string>Placer</string>
+           </property>
+          </widget>
+          <widget class="QGroupBox" name="radialshooter_gr" >
+           <property name="geometry" >
+            <rect>
+             <x>10</x>
+             <y>60</y>
+             <width>246</width>
+             <height>300</height>
+            </rect>
+           </property>
+           <property name="title" >
+            <string>Radial Shooter</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout" >
+            <item>
+             <widget class="QLabel" name="label_21" >
+              <property name="text" >
+               <string>Theta</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_5" >
+              <item>
+               <widget class="QLabel" name="label_19" >
+                <property name="text" >
+                 <string>From:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="thetamin_sb" >
+                <property name="decimals" >
+                 <number>1</number>
+                </property>
+                <property name="maximum" >
+                 <double>50.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_20" >
+                <property name="text" >
+                 <string>To:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="thetamax_sb" >
+                <property name="decimals" >
+                 <number>1</number>
+                </property>
+                <property name="maximum" >
+                 <double>50.000000000000000</double>
+                </property>
+                <property name="value" >
+                 <double>10.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_24" >
+              <property name="text" >
+               <string>Phi</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_6" >
+              <item>
+               <widget class="QLabel" name="label_22" >
+                <property name="text" >
+                 <string>From:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="phimin_sb" >
+                <property name="decimals" >
+                 <number>1</number>
+                </property>
+                <property name="maximum" >
+                 <double>50.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_23" >
+                <property name="text" >
+                 <string>To:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="phimax_sb" >
+                <property name="decimals" >
+                 <number>1</number>
+                </property>
+                <property name="maximum" >
+                 <double>50.000000000000000</double>
+                </property>
+                <property name="value" >
+                 <double>10.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_13" >
+              <property name="text" >
+               <string>Speed</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3" >
+              <item>
+               <widget class="QLabel" name="label_14" >
+                <property name="text" >
+                 <string>From:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="speedmin_sb" >
+                <property name="decimals" >
+                 <number>1</number>
+                </property>
+                <property name="maximum" >
+                 <double>50.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_15" >
+                <property name="text" >
+                 <string>To:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="speedmax_sb" >
+                <property name="decimals" >
+                 <number>1</number>
+                </property>
+                <property name="maximum" >
+                 <double>50.000000000000000</double>
+                </property>
+                <property name="value" >
+                 <double>10.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_16" >
+              <property name="text" >
+               <string>Count</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_4" >
+              <item>
+               <widget class="QLabel" name="label_17" >
+                <property name="text" >
+                 <string>From:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="countermin_sb" >
+                <property name="decimals" >
+                 <number>1</number>
+                </property>
+                <property name="maximum" >
+                 <double>50.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_18" >
+                <property name="text" >
+                 <string>To:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="countermax_sb" >
+                <property name="decimals" >
+                 <number>1</number>
+                </property>
+                <property name="maximum" >
+                 <double>300.000000000000000</double>
+                </property>
+                <property name="value" >
+                 <double>50.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_2" >
+         <property name="geometry" >
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>305</width>
+           <height>700</height>
+          </rect>
+         </property>
+         <attribute name="title" >
+          <string>Textures</string>
+         </attribute>
+         <widget class="QToolButton" name="toolButton" >
+          <property name="geometry" >
+           <rect>
+            <x>180</x>
+            <y>140</y>
+            <width>64</width>
+            <height>64</height>
+           </rect>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../images/pantocrator.qrc" >
+            <normaloff>:/smoke.png</normaloff>:/smoke.png</iconset>
+          </property>
+          <property name="iconSize" >
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QToolButton" name="toolButton_2" >
+          <property name="geometry" >
+           <rect>
+            <x>180</x>
+            <y>40</y>
+            <width>64</width>
+            <height>64</height>
+           </rect>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../images/pantocrator.qrc" >
+            <normaloff>:/flame3.png</normaloff>:/flame3.png</iconset>
+          </property>
+          <property name="iconSize" >
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QToolButton" name="toolButton_3" >
+          <property name="geometry" >
+           <rect>
+            <x>60</x>
+            <y>140</y>
+            <width>64</width>
+            <height>64</height>
+           </rect>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../images/pantocrator.qrc" >
+            <normaloff>:/FlowerBurst.jpg</normaloff>:/FlowerBurst.jpg</iconset>
+          </property>
+          <property name="iconSize" >
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QToolButton" name="toolButton_4" >
+          <property name="geometry" >
+           <rect>
+            <x>60</x>
+            <y>40</y>
+            <width>64</width>
+            <height>64</height>
+           </rect>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../images/pantocrator.qrc" >
+            <normaloff>:/partbase.png</normaloff>:/partbase.png</iconset>
+          </property>
+          <property name="iconSize" >
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QToolButton" name="toolButton_5" >
+          <property name="geometry" >
+           <rect>
+            <x>60</x>
+            <y>240</y>
+            <width>64</width>
+            <height>64</height>
+           </rect>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../images/pantocrator.qrc" >
+            <normaloff>:/Ice.png</normaloff>:/Ice.png</iconset>
+          </property>
+          <property name="iconSize" >
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QToolButton" name="toolButton_6" >
+          <property name="geometry" >
+           <rect>
+            <x>180</x>
+            <y>240</y>
+            <width>64</width>
+            <height>64</height>
+           </rect>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../images/pantocrator.qrc" >
+            <normaloff>:/Electric.png</normaloff>:/Electric.png</iconset>
+          </property>
+          <property name="iconSize" >
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QToolButton" name="toolButton_7" >
+          <property name="geometry" >
+           <rect>
+            <x>60</x>
+            <y>340</y>
+            <width>64</width>
+            <height>64</height>
+           </rect>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../images/pantocrator.qrc" >
+            <normaloff>:/Emp.png</normaloff>:/Emp.png</iconset>
+          </property>
+          <property name="iconSize" >
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QToolButton" name="toolButton_8" >
+          <property name="geometry" >
+           <rect>
+            <x>180</x>
+            <y>340</y>
+            <width>64</width>
+            <height>64</height>
+           </rect>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../images/pantocrator.qrc" >
+            <normaloff>:/Laser.png</normaloff>:/Laser.png</iconset>
+          </property>
+          <property name="iconSize" >
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QToolButton" name="toolButton_9" >
+          <property name="geometry" >
+           <rect>
+            <x>60</x>
+            <y>440</y>
+            <width>64</width>
+            <height>64</height>
+           </rect>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../images/pantocrator.qrc" >
+            <normaloff>:/Sonic.png</normaloff>:/Sonic.png</iconset>
+          </property>
+          <property name="iconSize" >
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QToolButton" name="toolButton_10" >
+          <property name="geometry" >
+           <rect>
+            <x>180</x>
+            <y>440</y>
+            <width>64</width>
+            <height>64</height>
+           </rect>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../images/pantocrator.qrc" >
+            <normaloff>:/Virulent.png</normaloff>:/Virulent.png</iconset>
+          </property>
+          <property name="iconSize" >
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_3" >
+         <attribute name="title" >
+          <string>Physics</string>
+         </attribute>
+         <widget class="QGroupBox" name="groupBox_2" >
+          <property name="geometry" >
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>291</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="title" >
+           <string/>
+          </property>
+          <widget class="QLabel" name="label_12" >
+           <property name="geometry" >
+            <rect>
+             <x>13</x>
+             <y>20</y>
+             <width>51</width>
+             <height>27</height>
+            </rect>
+           </property>
+           <property name="text" >
+            <string>Vector</string>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="accely_sb" >
+           <property name="geometry" >
+            <rect>
+             <x>140</x>
+             <y>20</y>
+             <width>59</width>
+             <height>27</height>
+            </rect>
+           </property>
+           <property name="decimals" >
+            <number>1</number>
+           </property>
+           <property name="maximum" >
+            <double>100.000000000000000</double>
+           </property>
+           <property name="singleStep" >
+            <double>0.100000000000000</double>
+           </property>
+           <property name="value" >
+            <double>0.000000000000000</double>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="accelx_sb" >
+           <property name="geometry" >
+            <rect>
+             <x>70</x>
+             <y>20</y>
+             <width>58</width>
+             <height>27</height>
+            </rect>
+           </property>
+           <property name="decimals" >
+            <number>1</number>
+           </property>
+           <property name="maximum" >
+            <double>50.000000000000000</double>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="accelz_sb" >
+           <property name="geometry" >
+            <rect>
+             <x>210</x>
+             <y>20</y>
+             <width>58</width>
+             <height>27</height>
+            </rect>
+           </property>
+           <property name="decimals" >
+            <number>1</number>
+           </property>
+           <property name="minimum" >
+            <double>-100.000000000000000</double>
+           </property>
+           <property name="maximum" >
+            <double>100.000000000000000</double>
+           </property>
+           <property name="singleStep" >
+            <double>0.100000000000000</double>
+           </property>
+           <property name="value" >
+            <double>-9.800000000000001</double>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QCheckBox" name="checkBox" >
+          <property name="geometry" >
+           <rect>
+            <x>20</x>
+            <y>30</y>
+            <width>101</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text" >
+           <string>Accelerator</string>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_3" >
+          <property name="geometry" >
+           <rect>
+            <x>10</x>
+            <y>160</y>
+            <width>291</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <property name="title" >
+           <string/>
+          </property>
+          <widget class="QDoubleSpinBox" name="viscosity" >
+           <property name="geometry" >
+            <rect>
+             <x>180</x>
+             <y>50</y>
+             <width>71</width>
+             <height>27</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="density_sb" >
+           <property name="geometry" >
+            <rect>
+             <x>180</x>
+             <y>13</y>
+             <width>71</width>
+             <height>27</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_26" >
+           <property name="geometry" >
+            <rect>
+             <x>19</x>
+             <y>13</y>
+             <width>76</width>
+             <height>27</height>
+            </rect>
+           </property>
+           <property name="text" >
+            <string>Density</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_11" >
+           <property name="geometry" >
+            <rect>
+             <x>19</x>
+             <y>50</y>
+             <width>76</width>
+             <height>27</height>
+            </rect>
+           </property>
+           <property name="text" >
+            <string>Viscosity</string>
+           </property>
+          </widget>
+          <zorder>label_25</zorder>
+          <zorder>accely_sb_2</zorder>
+          <zorder>accelx_sb_2</zorder>
+          <zorder>accelz_sb_2</zorder>
+          <zorder>density_sb</zorder>
+          <zorder>label_11</zorder>
+          <zorder>viscosity</zorder>
+          <zorder>viscosity</zorder>
+          <zorder>density_sb</zorder>
+          <zorder>label_26</zorder>
+          <zorder>label_11</zorder>
+         </widget>
+         <widget class="QCheckBox" name="checkBox_2" >
+          <property name="geometry" >
+           <rect>
+            <x>20</x>
+            <y>130</y>
+            <width>101</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text" >
+           <string>Fluid</string>
+          </property>
+         </widget>
+         <widget class="QTabWidget" name="color_gr_2" >
+          <property name="geometry" >
+           <rect>
+            <x>667</x>
+            <y>150</y>
+            <width>311</width>
+            <height>729</height>
+           </rect>
+          </property>
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Expanding" hsizetype="Preferred" >
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize" >
+           <size>
+            <width>311</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="currentIndex" >
+           <number>2</number>
+          </property>
+          <property name="iconSize" >
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <widget class="QWidget" name="tab_4" >
+           <property name="geometry" >
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>305</width>
+             <height>700</height>
+            </rect>
+           </property>
+           <attribute name="title" >
+            <string>Particles</string>
+           </attribute>
+           <widget class="QGroupBox" name="groupBox_5" >
+            <property name="geometry" >
+             <rect>
+              <x>20</x>
+              <y>10</y>
+              <width>261</width>
+              <height>301</height>
+             </rect>
+            </property>
+            <property name="title" >
+             <string>Particle</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2" >
+             <item row="1" column="0" >
+              <widget class="QLabel" name="label_28" >
+               <property name="text" >
+                <string>Shape:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2" colspan="2" >
+              <widget class="QComboBox" name="shape_cb_2" >
+               <property name="autoFillBackground" >
+                <bool>false</bool>
+               </property>
+               <item>
+                <property name="text" >
+                 <string>Point</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Quad</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Quad Strip</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Hexagon</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Line</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="2" column="0" >
+              <widget class="QLabel" name="label_29" >
+               <property name="text" >
+                <string>Size:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0" >
+              <widget class="QLabel" name="label_30" >
+               <property name="text" >
+                <string>Life:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="3" >
+              <widget class="QDoubleSpinBox" name="life_sb_2" />
+             </item>
+             <item row="4" column="0" >
+              <widget class="QLabel" name="label_31" >
+               <property name="text" >
+                <string>Radius:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="3" >
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_4" />
+             </item>
+             <item row="5" column="0" >
+              <widget class="QLabel" name="label_32" >
+               <property name="text" >
+                <string>Mass:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="3" >
+              <widget class="QDoubleSpinBox" name="mass_sb_2" />
+             </item>
+             <item row="2" column="3" >
+              <widget class="QDoubleSpinBox" name="sizemax_sb_2" >
+               <property name="decimals" >
+                <number>1</number>
+               </property>
+               <property name="maximum" >
+                <double>50.000000000000000</double>
+               </property>
+               <property name="singleStep" >
+                <double>0.100000000000000</double>
+               </property>
+               <property name="value" >
+                <double>5.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2" >
+              <widget class="QDoubleSpinBox" name="sizemin_sb_2" >
+               <property name="decimals" >
+                <number>1</number>
+               </property>
+               <property name="maximum" >
+                <double>50.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0" >
+              <widget class="QLabel" name="label_33" >
+               <property name="text" >
+                <string>Alignement:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2" colspan="2" >
+              <widget class="QComboBox" name="alignment_cb_2" >
+               <property name="autoFillBackground" >
+                <bool>false</bool>
+               </property>
+               <item>
+                <property name="text" >
+                 <string>Billboard</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Fixed</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="6" column="2" colspan="2" >
+              <layout class="QHBoxLayout" name="horizontalLayout_8" >
+               <item>
+                <widget class="QLabel" name="label_34" >
+                 <property name="text" >
+                  <string>From:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="fromcolorButton_2" >
+                 <property name="text" >
+                  <string>...</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_35" >
+                 <property name="text" >
+                  <string>To:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="tocolorButton_2" >
+                 <property name="text" >
+                  <string>...</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="6" column="0" >
+              <widget class="QLabel" name="label_36" >
+               <property name="text" >
+                <string>Color</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QGroupBox" name="emitter_gr_2" >
+            <property name="geometry" >
+             <rect>
+              <x>20</x>
+              <y>320</y>
+              <width>261</width>
+              <height>371</height>
+             </rect>
+            </property>
+            <property name="title" >
+             <string>Emitter</string>
+            </property>
+            <widget class="QComboBox" name="placer_cb_2" >
+             <property name="geometry" >
+              <rect>
+               <x>100</x>
+               <y>30</y>
+               <width>153</width>
+               <height>26</height>
+              </rect>
+             </property>
+             <property name="autoFillBackground" >
+              <bool>false</bool>
+             </property>
+             <item>
+              <property name="text" >
+               <string>Box </string>
+              </property>
+             </item>
+             <item>
+              <property name="text" >
+               <string>Point</string>
+              </property>
+             </item>
+             <item>
+              <property name="text" >
+               <string>Sector</string>
+              </property>
+             </item>
+             <item>
+              <property name="text" >
+               <string>MultiSegment</string>
+              </property>
+             </item>
+             <item>
+              <property name="text" >
+               <string>Segment</string>
+              </property>
+             </item>
+            </widget>
+            <widget class="QLabel" name="label_37" >
+             <property name="geometry" >
+              <rect>
+               <x>19</x>
+               <y>32</y>
+               <width>81</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="text" >
+              <string>Placer</string>
+             </property>
+            </widget>
+            <widget class="QGroupBox" name="radialshooter_gr_2" >
+             <property name="geometry" >
+              <rect>
+               <x>10</x>
+               <y>60</y>
+               <width>246</width>
+               <height>300</height>
+              </rect>
+             </property>
+             <property name="title" >
+              <string>Radial Shooter</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2" >
+              <item>
+               <widget class="QLabel" name="label_38" >
+                <property name="text" >
+                 <string>Theta</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_9" >
+                <item>
+                 <widget class="QLabel" name="label_39" >
+                  <property name="text" >
+                   <string>From:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="thetamin_sb_2" >
+                  <property name="decimals" >
+                   <number>1</number>
+                  </property>
+                  <property name="maximum" >
+                   <double>50.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_40" >
+                  <property name="text" >
+                   <string>To:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="thetamax_sb_2" >
+                  <property name="decimals" >
+                   <number>1</number>
+                  </property>
+                  <property name="maximum" >
+                   <double>50.000000000000000</double>
+                  </property>
+                  <property name="value" >
+                   <double>10.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_41" >
+                <property name="text" >
+                 <string>Phi</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_10" >
+                <item>
+                 <widget class="QLabel" name="label_42" >
+                  <property name="text" >
+                   <string>From:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="phimin_sb_2" >
+                  <property name="decimals" >
+                   <number>1</number>
+                  </property>
+                  <property name="maximum" >
+                   <double>50.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_43" >
+                  <property name="text" >
+                   <string>To:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="phimax_sb_2" >
+                  <property name="decimals" >
+                   <number>1</number>
+                  </property>
+                  <property name="maximum" >
+                   <double>50.000000000000000</double>
+                  </property>
+                  <property name="value" >
+                   <double>10.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_44" >
+                <property name="text" >
+                 <string>Speed</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_11" >
+                <item>
+                 <widget class="QLabel" name="label_45" >
+                  <property name="text" >
+                   <string>From:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="speedmin_sb_2" >
+                  <property name="decimals" >
+                   <number>1</number>
+                  </property>
+                  <property name="maximum" >
+                   <double>50.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_46" >
+                  <property name="text" >
+                   <string>To:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="speedmax_sb_2" >
+                  <property name="decimals" >
+                   <number>1</number>
+                  </property>
+                  <property name="maximum" >
+                   <double>50.000000000000000</double>
+                  </property>
+                  <property name="value" >
+                   <double>10.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_47" >
+                <property name="text" >
+                 <string>Count</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_12" >
+                <item>
+                 <widget class="QLabel" name="label_48" >
+                  <property name="text" >
+                   <string>From:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="countermin_sb_2" >
+                  <property name="decimals" >
+                   <number>1</number>
+                  </property>
+                  <property name="maximum" >
+                   <double>50.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_49" >
+                  <property name="text" >
+                   <string>To:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="countermax_sb_2" >
+                  <property name="decimals" >
+                   <number>1</number>
+                  </property>
+                  <property name="maximum" >
+                   <double>300.000000000000000</double>
+                  </property>
+                  <property name="value" >
+                   <double>50.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="tab_5" >
+           <property name="geometry" >
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>305</width>
+             <height>700</height>
+            </rect>
+           </property>
+           <attribute name="title" >
+            <string>Textures</string>
+           </attribute>
+           <widget class="QToolButton" name="toolButton_11" >
+            <property name="geometry" >
+             <rect>
+              <x>180</x>
+              <y>140</y>
+              <width>64</width>
+              <height>64</height>
+             </rect>
+            </property>
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="icon" >
+             <iconset resource="../images/pantocrator.qrc" >
+              <normaloff>:/smoke.png</normaloff>:/smoke.png</iconset>
+            </property>
+            <property name="iconSize" >
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="toolButton_12" >
+            <property name="geometry" >
+             <rect>
+              <x>180</x>
+              <y>40</y>
+              <width>64</width>
+              <height>64</height>
+             </rect>
+            </property>
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="icon" >
+             <iconset resource="../images/pantocrator.qrc" >
+              <normaloff>:/flame3.png</normaloff>:/flame3.png</iconset>
+            </property>
+            <property name="iconSize" >
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="toolButton_13" >
+            <property name="geometry" >
+             <rect>
+              <x>60</x>
+              <y>140</y>
+              <width>64</width>
+              <height>64</height>
+             </rect>
+            </property>
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="icon" >
+             <iconset resource="../images/pantocrator.qrc" >
+              <normaloff>:/FlowerBurst.jpg</normaloff>:/FlowerBurst.jpg</iconset>
+            </property>
+            <property name="iconSize" >
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="toolButton_14" >
+            <property name="geometry" >
+             <rect>
+              <x>60</x>
+              <y>40</y>
+              <width>64</width>
+              <height>64</height>
+             </rect>
+            </property>
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="icon" >
+             <iconset resource="../images/pantocrator.qrc" >
+              <normaloff>:/partbase.png</normaloff>:/partbase.png</iconset>
+            </property>
+            <property name="iconSize" >
+             <size>
+              <width>64</width>
+              <height>64</height>
+             </size>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="toolButton_15" >
+            <property name="geometry" >
+             <rect>
+              <x>60</x>
+              <y>240</y>
+              <width>64</width>
+              <height>64</height>
+             </rect>
+            </property>
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="icon" >
+             <iconset resource="../images/pantocrator.qrc" >
+              <normaloff>:/Ice.png</normaloff>:/Ice.png</iconset>
+            </property>
+            <property name="iconSize" >
+             <size>
+              <width>64</width>
+              <height>64</height>
+             </size>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="toolButton_16" >
+            <property name="geometry" >
+             <rect>
+              <x>180</x>
+              <y>240</y>
+              <width>64</width>
+              <height>64</height>
+             </rect>
+            </property>
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="icon" >
+             <iconset resource="../images/pantocrator.qrc" >
+              <normaloff>:/Electric.png</normaloff>:/Electric.png</iconset>
+            </property>
+            <property name="iconSize" >
+             <size>
+              <width>64</width>
+              <height>64</height>
+             </size>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="toolButton_17" >
+            <property name="geometry" >
+             <rect>
+              <x>60</x>
+              <y>340</y>
+              <width>64</width>
+              <height>64</height>
+             </rect>
+            </property>
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="icon" >
+             <iconset resource="../images/pantocrator.qrc" >
+              <normaloff>:/Emp.png</normaloff>:/Emp.png</iconset>
+            </property>
+            <property name="iconSize" >
+             <size>
+              <width>64</width>
+              <height>64</height>
+             </size>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="toolButton_18" >
+            <property name="geometry" >
+             <rect>
+              <x>180</x>
+              <y>340</y>
+              <width>64</width>
+              <height>64</height>
+             </rect>
+            </property>
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="icon" >
+             <iconset resource="../images/pantocrator.qrc" >
+              <normaloff>:/Laser.png</normaloff>:/Laser.png</iconset>
+            </property>
+            <property name="iconSize" >
+             <size>
+              <width>64</width>
+              <height>64</height>
+             </size>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="toolButton_19" >
+            <property name="geometry" >
+             <rect>
+              <x>60</x>
+              <y>440</y>
+              <width>64</width>
+              <height>64</height>
+             </rect>
+            </property>
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="icon" >
+             <iconset resource="../images/pantocrator.qrc" >
+              <normaloff>:/Sonic.png</normaloff>:/Sonic.png</iconset>
+            </property>
+            <property name="iconSize" >
+             <size>
+              <width>64</width>
+              <height>64</height>
+             </size>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="toolButton_20" >
+            <property name="geometry" >
+             <rect>
+              <x>180</x>
+              <y>440</y>
+              <width>64</width>
+              <height>64</height>
+             </rect>
+            </property>
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="icon" >
+             <iconset resource="../images/pantocrator.qrc" >
+              <normaloff>:/Virulent.png</normaloff>:/Virulent.png</iconset>
+            </property>
+            <property name="iconSize" >
+             <size>
+              <width>64</width>
+              <height>64</height>
+             </size>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="tab_6" >
+           <property name="geometry" >
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>305</width>
+             <height>700</height>
+            </rect>
+           </property>
+           <attribute name="title" >
+            <string>Physics</string>
+           </attribute>
+           <widget class="QGroupBox" name="groupBox_6" >
+            <property name="geometry" >
+             <rect>
+              <x>10</x>
+              <y>60</y>
+              <width>291</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="title" >
+             <string/>
+            </property>
+            <widget class="QLabel" name="label_50" >
+             <property name="geometry" >
+              <rect>
+               <x>13</x>
+               <y>20</y>
+               <width>51</width>
+               <height>27</height>
+              </rect>
+             </property>
+             <property name="text" >
+              <string>Vector</string>
+             </property>
+            </widget>
+            <widget class="QDoubleSpinBox" name="accely_sb_2" >
+             <property name="geometry" >
+              <rect>
+               <x>140</x>
+               <y>20</y>
+               <width>59</width>
+               <height>27</height>
+              </rect>
+             </property>
+             <property name="decimals" >
+              <number>1</number>
+             </property>
+             <property name="maximum" >
+              <double>100.000000000000000</double>
+             </property>
+             <property name="singleStep" >
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value" >
+              <double>0.000000000000000</double>
+             </property>
+            </widget>
+            <widget class="QDoubleSpinBox" name="accelx_sb_2" >
+             <property name="geometry" >
+              <rect>
+               <x>70</x>
+               <y>20</y>
+               <width>58</width>
+               <height>27</height>
+              </rect>
+             </property>
+             <property name="decimals" >
+              <number>1</number>
+             </property>
+             <property name="maximum" >
+              <double>50.000000000000000</double>
+             </property>
+            </widget>
+            <widget class="QDoubleSpinBox" name="accelz_sb_2" >
+             <property name="geometry" >
+              <rect>
+               <x>210</x>
+               <y>20</y>
+               <width>58</width>
+               <height>27</height>
+              </rect>
+             </property>
+             <property name="decimals" >
+              <number>1</number>
+             </property>
+             <property name="minimum" >
+              <double>-100.000000000000000</double>
+             </property>
+             <property name="maximum" >
+              <double>100.000000000000000</double>
+             </property>
+             <property name="singleStep" >
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value" >
+              <double>-9.800000000000001</double>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QCheckBox" name="checkBox_3" >
+            <property name="geometry" >
+             <rect>
+              <x>20</x>
+              <y>30</y>
+              <width>101</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text" >
+             <string>Accelerator</string>
+            </property>
+           </widget>
+           <widget class="QGroupBox" name="groupBox_7" >
+            <property name="geometry" >
+             <rect>
+              <x>10</x>
+              <y>160</y>
+              <width>291</width>
+              <height>101</height>
+             </rect>
+            </property>
+            <property name="title" >
+             <string/>
+            </property>
+            <widget class="QDoubleSpinBox" name="viscosity_3" >
+             <property name="geometry" >
+              <rect>
+               <x>180</x>
+               <y>50</y>
+               <width>71</width>
+               <height>27</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QDoubleSpinBox" name="density_sb_3" >
+             <property name="geometry" >
+              <rect>
+               <x>180</x>
+               <y>13</y>
+               <width>71</width>
+               <height>27</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_51" >
+             <property name="geometry" >
+              <rect>
+               <x>19</x>
+               <y>13</y>
+               <width>76</width>
+               <height>27</height>
+              </rect>
+             </property>
+             <property name="text" >
+              <string>Density</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_52" >
+             <property name="geometry" >
+              <rect>
+               <x>19</x>
+               <y>50</y>
+               <width>76</width>
+               <height>27</height>
+              </rect>
+             </property>
+             <property name="text" >
+              <string>Viscosity</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QCheckBox" name="checkBox_4" >
+            <property name="geometry" >
+             <rect>
+              <x>20</x>
+              <y>130</y>
+              <width>101</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text" >
+             <string>Fluid</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+         <widget class="QCheckBox" name="checkBox_5" >
+          <property name="geometry" >
+           <rect>
+            <x>20</x>
+            <y>280</y>
+            <width>101</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text" >
+           <string>Effects</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="alignment_cb_3" >
+          <property name="geometry" >
+           <rect>
+            <x>140</x>
+            <y>280</y>
+            <width>154</width>
+            <height>26</height>
+           </rect>
+          </property>
+          <property name="autoFillBackground" >
+           <bool>false</bool>
+          </property>
+          <item>
+           <property name="text" >
+            <string>Fire</string>
+           </property>
+          </item>
+          <item>
+           <property name="text" >
+            <string>Smoke</string>
+           </property>
+          </item>
+          <item>
+           <property name="text" >
+            <string>Explosion</string>
+           </property>
+          </item>
+          <item>
+           <property name="text" >
+            <string>Explosion Debriss</string>
+           </property>
+          </item>
+          <item>
+           <property name="text" >
+            <string>Precipitation</string>
+           </property>
+          </item>
+         </widget>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1004</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile" >
+    <property name="title" >
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuNew" >
+     <property name="title" >
+      <string>New</string>
+     </property>
+     <addaction name="actionParticleSystem" />
+    </widget>
+    <addaction name="menuNew" />
+    <addaction name="actionOpen" />
+    <addaction name="actionSave" />
+    <addaction name="actionSave_As" />
+   </widget>
+   <addaction name="menuFile" />
+  </widget>
+  <widget class="QStatusBar" name="statusbar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>814</y>
+     <width>1004</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>22</y>
+     <width>91</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <property name="windowTitle" >
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea" >
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak" >
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOpen" />
+   <addaction name="actionSave" />
+  </widget>
+  <widget class="QToolBar" name="toolBar_2" >
+   <property name="geometry" >
+    <rect>
+     <x>91</x>
+     <y>22</y>
+     <width>13</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <property name="windowTitle" >
+    <string>toolBar_2</string>
+   </property>
+   <attribute name="toolBarArea" >
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak" >
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QToolBar" name="toolBar_3" >
+   <property name="geometry" >
+    <rect>
+     <x>104</x>
+     <y>22</y>
+     <width>900</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <property name="windowTitle" >
+    <string>toolBar_3</string>
+   </property>
+   <attribute name="toolBarArea" >
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak" >
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="actionOpen" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="icon" >
+    <iconset resource="../images/pantocrator.qrc" >
+     <normaloff>:/open.png</normaloff>:/open.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSave" >
+   <property name="icon" >
+    <iconset resource="../images/pantocrator.qrc" >
+     <normaloff>:/save.png</normaloff>:/save.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSave_As" >
+   <property name="text" >
+    <string>Save As...</string>
+   </property>
+  </action>
+  <action name="actionParticleSystem" >
+   <property name="text" >
+    <string>ParticleSystem</string>
+   </property>
+  </action>
+  <action name="actionProcedural_Texture" >
+   <property name="text" >
+    <string>Procedural Texture</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ViewerQT</class>
+   <extends>QWidget</extends>
+   <header>osgParti/AdapterWidget.hpp</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../images/pantocrator.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>shape_cb</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>shape_cb</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>816</x>
+     <y>181</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>816</x>
+     <y>181</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>alignment_cb</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>alignment_cb</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>815</x>
+     <y>146</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>814</x>
+     <y>146</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
