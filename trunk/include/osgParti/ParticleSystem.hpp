@@ -160,6 +160,11 @@ namespace osgParti {
     osgParticle::rangef getSpeed() const;
  
 	void setPlacer(osgParticle::Placer* placer);
+	//Particle Texture//////////////////////////////////////////////////////////
+	void setTexture(std::string texture);
+	
+
+
 
 ~ParticleSystem();
 protected:

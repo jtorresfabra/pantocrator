@@ -18,7 +18,7 @@ PantocratorWindow::PantocratorWindow():QMainWindow(),MainWindow()
 	statesetManipulator->setStateSet(osgwidget->getCamera()->getOrCreateStateSet());
 	osgwidget->addEventHandler( statesetManipulator.get() );
 	root= new osg::Group();
-
+ 
 }
 void PantocratorWindow::open(){
 	QString fileName = QFileDialog::getOpenFileName(this);
@@ -32,7 +32,6 @@ bool PantocratorWindow::saveAs(){
 	return false;
 }
 void PantocratorWindow::newParticleSystem(){
-	std::cout<<"pasooo"<<std::endl;
 	particleSystem= new ParticleSystem();
 //	particleSystem->setMinTheta(2.0);
 //	particleSystem->setMaxTheta(4.0);
@@ -73,10 +72,21 @@ void PantocratorWindow::connectSlots(){
 	QObject::connect(countermin_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinCount(double)));
 	QObject::connect(countermax_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxCount(double)));
 	QObject::connect(placer_cb, SIGNAL(currentIndexChanged(int)), this, SLOT(setParticlePlacer(int)));
+//Textures
+	QObject::connect(toolButton, SIGNAL(clicked()),this,SLOT(setParticleTextureSmoke()));
+	QObject::connect(toolButton_2, SIGNAL(clicked()),this,SLOT(setParticleTextureFire()));
+	QObject::connect(toolButton_4, SIGNAL(clicked()),this,SLOT(setParticleTextureBase()));
+	QObject::connect(toolButton_9, SIGNAL(clicked()),this,SLOT(setParticleTextureSonic()));
+	QObject::connect(toolButton_10, SIGNAL(clicked()),this,SLOT(setParticleTextureVirulent()));
+	QObject::connect(toolButton_8, SIGNAL(clicked()),this,SLOT(setParticleTextureLaser()));
+	QObject::connect(toolButton_6, SIGNAL(clicked()),this,SLOT(setParticleTextureElectric()));
+	QObject::connect(toolButton_5, SIGNAL(clicked()),this,SLOT(setParticleTextureIce()));
+	QObject::connect(toolButton_3, SIGNAL(clicked()),this,SLOT(setParticleTextureFlower()));
+	QObject::connect(toolButton_7, SIGNAL(clicked()),this,SLOT(setParticleTextureEmp()));
+
 }
 void PantocratorWindow::setParticleAlignment(int i){
 	if (particleSystem!=NULL)
-		std::cout<<"i"<<i;
 		if (i==1)particleSystem->setAlignmentFixed();
 		else particleSystem->setAlignmentBillboard();
 }
@@ -134,9 +144,58 @@ void PantocratorWindow::setParticlePlacer(int placer){
 				case 1:
 				particleSystem->setPlacer(new osgParticle::BoxPlacer());
 				break;
-			
-			
-			
+		}
+	}
+void PantocratorWindow::setParticleTextureFire(){
+	if (particleSystem!=NULL){
+		particleSystem->setTexture("../include/images/flame3.png");
+	}
+}
+void PantocratorWindow::setParticleTextureSmoke(){
+		if (particleSystem!=NULL){
+			particleSystem->setTexture("../include/images/smoke.png");
+		}
+}		
+void PantocratorWindow::setParticleTextureBase(){
+		if (particleSystem!=NULL){
+			particleSystem->setTexture("../include/images/partbase.png");
 		}
 }
+void PantocratorWindow::setParticleTextureSonic(){
+		if (particleSystem!=NULL){
+				particleSystem->setTexture("../include/images/Sonic.png");
+			}
+}
+void PantocratorWindow::setParticleTextureVirulent(){
+		if (particleSystem!=NULL){
+				particleSystem->setTexture("../include/images/Virulent.png");
+			}
+}
+void PantocratorWindow::setParticleTextureLaser(){
+		if (particleSystem!=NULL){
+				particleSystem->setTexture("../include/images/Laser.png");
+			}
+}
+void PantocratorWindow::setParticleTextureElectric(){
+		if (particleSystem!=NULL){
+				particleSystem->setTexture("../include/images/Electric.png");
+			}
+}
+void PantocratorWindow::setParticleTextureIce(){
+		if (particleSystem!=NULL){
+				particleSystem->setTexture("../include/images/Ice.png");
+			}
+}
+void PantocratorWindow::setParticleTextureEmp(){
+		if (particleSystem!=NULL){
+				particleSystem->setTexture("../include/images/Emp.png");
+			}
+}
+void PantocratorWindow::setParticleTextureFlower(){
+		if (particleSystem!=NULL){
+				particleSystem->setTexture("../include/images/FlowerBurst.jpg");
+			}
+}
+	
+	
 

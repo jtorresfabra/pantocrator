@@ -56,7 +56,7 @@ ParticleSystem::ParticleSystem()
     Note that Particle System is a derived class of Drawable, thus we must
     add it to an osg::Geode before we may add it to the SceneGraph.
 */
-  particleSystem->setDefaultAttributes("../include/images/smoke.png", true, false);
+  particleSystem->setDefaultAttributes("../include/images/partbase.png", true, false);
   particleSystem->setDefaultParticleTemplate(*defaultParticle);
   geode->addDrawable(particleSystem.get());
   root->addChild(geode.get());
@@ -1009,3 +1009,8 @@ osgParticle::rangef ParticleSystem::getSpeed() const{
 void ParticleSystem::setPlacer(osgParticle::Placer *placer){
 	emitter->setPlacer(placer);
 }
+void ParticleSystem::setTexture(std::string texture){
+	particleSystem->setDefaultAttributes(texture, true, false);
+  particleSystem->setDefaultParticleTemplate(*defaultParticle);
+}
+
