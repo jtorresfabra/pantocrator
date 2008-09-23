@@ -26,7 +26,7 @@ void PantocratorWindow::open(){
          loadFile(fileName);
 }
 bool PantocratorWindow::save(){
-	QString fileName = QFileDialog::getSaveFileName(this, "Save file", "", ".ive") ;
+	QString fileName = QFileDialog::getSaveFileName(this, "Save file", "", ".osg") ;
 	if (!fileName.isEmpty())
          saveFile(fileName);
 
