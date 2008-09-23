@@ -60,6 +60,7 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <zorder>color_gr</zorder>
       </widget>
      </item>
      <item>
@@ -77,7 +78,7 @@
         </size>
        </property>
        <property name="currentIndex" >
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="tab" >
         <property name="geometry" >
@@ -659,7 +660,7 @@
   <action name="actionOpen" >
    <property name="icon" >
     <iconset>
-     <normalon>../../../../../../Desktop/qt-mac-opensource-src-4.4.0/examples/mainwindows/application/images/open.png</normalon>
+     <normalon>../../../../../../../../../../../../Desktop/qt-mac-opensource-src-4.4.0/examples/mainwindows/application/images/open.png</normalon>
     </iconset>
    </property>
    <property name="text" >
@@ -669,7 +670,7 @@
   <action name="actionSave" >
    <property name="icon" >
     <iconset>
-     <normalon>../../../../../../Desktop/qt-mac-opensource-src-4.4.0/examples/mainwindows/application/images/save.png</normalon>
+     <normalon>../../../../../../../../../../../../Desktop/qt-mac-opensource-src-4.4.0/examples/mainwindows/application/images/save.png</normalon>
     </iconset>
    </property>
    <property name="text" >
@@ -700,7 +701,9 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../images/pantocrator.qrc" />
+ </resources>
  <connections>
   <connection>
    <sender>alignment_cb</sender>

@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="/" >
+    <file>Electric.png</file>
+    <file>Emp.png</file>
+    <file>Ice.png</file>
+    <file>Laser.png</file>
+    <file>Physical.png</file>
+    <file>Sonic.png</file>
+    <file>Virulent.png</file>
+    <file>partbase.png</file>
+    <file>flame3.png</file>
+    <file>FlowerBurst.jpg</file>
+    <file>smoke.png</file>
+    <file>save.png</file>
+    <file>open.png</file>
+  </qresource>
+</RCC>

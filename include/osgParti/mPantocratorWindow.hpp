@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'PantocratorWindow.hpp'
 **
-** Created: Wed Jul 30 20:31:24 2008
+** Created: Tue Sep 23 12:44:03 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-      19,   10, // methods
+      29,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
@@ -47,6 +47,16 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
      419,  410,   28,   28, 0x08,
      456,  447,   28,   28, 0x08,
      491,  484,   28,   28, 0x08,
+     514,   28,   28,   28, 0x08,
+     539,   28,   28,   28, 0x08,
+     565,   28,   28,   28, 0x08,
+     590,   28,   28,   28, 0x08,
+     616,   28,   28,   28, 0x08,
+     645,   28,   28,   28, 0x08,
+     671,   28,   28,   28, 0x08,
+     700,   28,   28,   28, 0x08,
+     724,   28,   28,   28, 0x08,
+     748,   28,   28,   28, 0x08,
 
        0        // eod
 };
@@ -66,6 +76,15 @@ static const char qt_meta_stringdata_osgParti__PantocratorWindow[] = {
     "mincount\0setParticleMinCount(double)\0"
     "maxcount\0setParticleMaxCount(double)\0"
     "placer\0setParticlePlacer(int)\0"
+    "setParticleTextureFire()\0"
+    "setParticleTextureSmoke()\0"
+    "setParticleTextureBase()\0"
+    "setParticleTextureSonic()\0"
+    "setParticleTextureVirulent()\0"
+    "setParticleTextureLaser()\0"
+    "setParticleTextureElectric()\0"
+    "setParticleTextureIce()\0setParticleTextureEmp()\0"
+    "setParticleTextureFlower()\0"
 };
 
 const QMetaObject osgParti::PantocratorWindow::staticMetaObject = {
@@ -116,8 +135,18 @@ int osgParti::PantocratorWindow::qt_metacall(QMetaObject::Call _c, int _id, void
         case 16: setParticleMinCount((*reinterpret_cast< double(*)>(_a[1]))); break;
         case 17: setParticleMaxCount((*reinterpret_cast< double(*)>(_a[1]))); break;
         case 18: setParticlePlacer((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 19: setParticleTextureFire(); break;
+        case 20: setParticleTextureSmoke(); break;
+        case 21: setParticleTextureBase(); break;
+        case 22: setParticleTextureSonic(); break;
+        case 23: setParticleTextureVirulent(); break;
+        case 24: setParticleTextureLaser(); break;
+        case 25: setParticleTextureElectric(); break;
+        case 26: setParticleTextureIce(); break;
+        case 27: setParticleTextureEmp(); break;
+        case 28: setParticleTextureFlower(); break;
         }
-        _id -= 19;
+        _id -= 29;
     }
     return _id;
 }

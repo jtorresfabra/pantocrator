@@ -39,8 +39,18 @@ namespace osgParti{
 		void setParticleMinCount(double mincount);
 		void setParticleMaxCount(double maxcount);
 		void setParticlePlacer(int placer);
-	
-	
+		void setParticleTextureFire();
+		void setParticleTextureSmoke();
+		void setParticleTextureBase();
+		void setParticleTextureSonic();
+		void setParticleTextureVirulent();
+		void setParticleTextureLaser();
+		void setParticleTextureElectric();
+		void setParticleTextureIce();
+		void setParticleTextureEmp();
+		void setParticleTextureFlower();
+
+
 	public:
 		PantocratorWindow();
 		ViewerQT* getViewerQT(){return osgwidget;}
