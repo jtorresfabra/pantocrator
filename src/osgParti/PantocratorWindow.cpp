@@ -79,7 +79,11 @@ void PantocratorWindow::connectSlots(){
 	QObject::connect(radius_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleRadius(double)));
 	QObject::connect(fromcolorButton, SIGNAL(clicked()), this, SLOT(setFromColor()));
 	QObject::connect(tocolorButton, SIGNAL(clicked()), this, SLOT(setToColor()));
-	QObject::connect(phiSlider, SIGNAL(sliderMoved(int)), this, SLOT(setParticleTheta(int)));
+	QObject::connect(thetamin_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinTheta(double)));
+	QObject::connect(thetamax_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxTheta(double)));
+	QObject::connect(phimin_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinTheta(double)));
+	QObject::connect(phimax_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxTheta(double)));
+
 	QObject::connect(speedmin_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinSpeed(double)));
 	QObject::connect(speedmax_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMaxSpeed(double)));
 	QObject::connect(countermin_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinCount(double)));
@@ -133,8 +137,17 @@ void PantocratorWindow::setToColor(){
 	particleSystem->setMaxRGB(osg::Vec4f (color.redF(),color.greenF(),color.blueF(),color.alphaF()));
     } 
 }
-void PantocratorWindow::setParticleTheta(int theta){
+void PantocratorWindow::setParticleMinTheta(double theta){
 	if (particleSystem!=NULL)particleSystem->setMinTheta((float)(theta));
+}
+void PantocratorWindow::setParticleMaxTheta(double theta){
+	if (particleSystem!=NULL)particleSystem->setMaxTheta((float)(theta));
+}
+void PantocratorWindow::setParticleMinPhi(double phi){
+	if (particleSystem!=NULL)particleSystem->setMinPhi((float)(phi));
+}
+void PantocratorWindow::setParticleMaxPhi(double phi){
+	if (particleSystem!=NULL)particleSystem->setMaxPhi((float)(phi));
 }
 void PantocratorWindow::setParticleMinSpeed(double minspeed){
 	if (particleSystem!=NULL)particleSystem->setMinSpeed(minspeed);

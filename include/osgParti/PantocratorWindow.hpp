@@ -34,7 +34,10 @@ namespace osgParti{
 		void setParticleRadius(double radius);
 		void setFromColor();
 		void setToColor();
-		void setParticleTheta(int theta);
+		void setParticleMinTheta(double theta);
+		void setParticleMaxTheta(double theta);
+		void setParticleMinPhi(double phi);
+		void setParticleMaxPhi(double phi);
 		void setParticleMinSpeed(double minspeed);
 		void setParticleMaxSpeed(double maxspeed);
 		void setParticleMinCount(double mincount);

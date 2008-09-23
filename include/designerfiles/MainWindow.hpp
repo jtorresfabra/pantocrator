@@ -7,9 +7,12 @@
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
 
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
 
+#ifndef _OSGPARTI_MAINWINDOW_HPP_
+#define _OSGPARTI_MAINWINDOW_HPP_ 1
+
+#include <osgParti/Export.hpp>
+#include <osgParti/AdapterWidget.hpp>
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
@@ -30,11 +33,12 @@
 #include <QtGui/QToolButton>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
-#include "osgParti/AdapterWidget.hpp"
 
-QT_BEGIN_NAMESPACE
 
-class Ui_mainWindow
+namespace osgParti{
+
+
+class OSGPARTI_EXPORT Ui_MainWindow
 {
 public:
     QAction *actionOpen;
@@ -1254,11 +1258,8 @@ public:
     } // retranslateUi
 
 };
+class OSGPARTI_EXPORT MainWindow: public Ui_MainWindow {};
 
-namespace Ui {
-    class mainWindow: public Ui_mainWindow {};
-} // namespace Ui
-
-QT_END_NAMESPACE
+}
 
 #endif // MAINWINDOW_H
