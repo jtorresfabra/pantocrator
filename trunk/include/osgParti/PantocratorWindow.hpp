@@ -10,6 +10,7 @@
 #include <QtGui/QWidget>
 #include <osgGA/StateSetManipulator>
 #include <QtGui/QColorDialog>
+#include <osgDB/WriteFile>
 
 
 
@@ -57,6 +58,7 @@ namespace osgParti{
 		
 		void connectSlots();
 		void loadFile(const QString &fileName);
+		void saveFile(const QString &fileName);
 		osg::ref_ptr<osg::Group>                             root;
 	protected:
 		osg::ref_ptr<osgParti::ParticleSystem> particleSystem;

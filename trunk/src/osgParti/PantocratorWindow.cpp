@@ -26,7 +26,11 @@ void PantocratorWindow::open(){
          loadFile(fileName);
 }
 bool PantocratorWindow::save(){
-	return false;
+	QString fileName = QFileDialog::getSaveFileName(this, "Save file", "", ".ive") ;
+	if (!fileName.isEmpty())
+         saveFile(fileName);
+
+
 }
 bool PantocratorWindow::saveAs(){
 	return false;
@@ -47,12 +51,21 @@ void PantocratorWindow::loadFile(const QString &fileName){
 	root->addChild(loadedModel.get());
 	osgwidget->setSceneData(root.get());
 }
+void PantocratorWindow::saveFile(const QString &fileName){
+	osg::Node *node = ((osg::Node*)root.get());
+	osgDB::writeNodeFile(*node,fileName.toStdString());
+}
 void PantocratorWindow::connectSlots(){
 
 //open
   	actionOpen->setShortcut(tr("Ctrl+O"));
   	actionOpen->setStatusTip(tr("Open an existing file"));
   	connect(actionOpen, SIGNAL(triggered()), this, SLOT(open()));
+//save
+	actionSave->setShortcut(tr("Ctrl+O"));
+	actionOpen->setStatusTip(tr("Save scene"));
+	connect(actionSave, SIGNAL(triggered()), this, SLOT(save()));
+
 //new particleSystem
 	actionParticleSystem->setStatusTip(tr("New ParticleSystem defaults loaded"));
 	connect(actionParticleSystem, SIGNAL(triggered()), this, SLOT(newParticleSystem()));
