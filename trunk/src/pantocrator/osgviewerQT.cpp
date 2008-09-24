@@ -88,7 +88,7 @@ int main( int argc, char **argv )
 		PantocratorWindow* window = new PantocratorWindow();
 		ViewerQT* viewerWindow = window->getViewerQT();
 		window->show();
-	        viewerWindow->setCameraManipulator(new osgGA::TrackballManipulator);
+	    viewerWindow->setCameraManipulator(new osgGA::TrackballManipulator);
 		viewerWindow->setSceneData(loadedModel.get());
 	        viewerWindow->show();
 

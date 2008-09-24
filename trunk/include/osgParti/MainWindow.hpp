@@ -46,7 +46,8 @@ public:
     QAction *actionSave_As;
     QAction *actionParticleSystem;
     QAction *actionProcedural_Texture;
-    QWidget *centralwidget;
+    QAction *actionFile;
+	QWidget *centralwidget;
     QHBoxLayout *horizontalLayout_7;
     QHBoxLayout *horizontalLayout;
     ViewerQT *osgwidget;
@@ -241,7 +242,9 @@ public:
     actionParticleSystem->setObjectName(QString::fromUtf8("actionParticleSystem"));
     actionProcedural_Texture = new QAction(mainWindow);
     actionProcedural_Texture->setObjectName(QString::fromUtf8("actionProcedural_Texture"));
-    centralwidget = new QWidget(mainWindow);
+    actionFile = new QAction(mainWindow);
+	actionFile->setObjectName(QString::fromUtf8("actionFile"));
+	centralwidget = new QWidget(mainWindow);
     centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
     centralwidget->setGeometry(QRect(0, 59, 1004, 755));
     horizontalLayout_7 = new QHBoxLayout(centralwidget);
@@ -1086,7 +1089,8 @@ public:
     menuFile->addAction(actionSave);
     menuFile->addAction(actionSave_As);
     menuNew->addAction(actionParticleSystem);
-    toolBar->addAction(actionOpen);
+    menuNew->addAction(actionFile);
+ 	toolBar->addAction(actionOpen);
     toolBar->addAction(actionSave);
 
     retranslateUi(mainWindow);
@@ -1108,7 +1112,8 @@ public:
     actionSave_As->setText(QApplication::translate("mainWindow", "Save As...", 0, QApplication::UnicodeUTF8));
     actionParticleSystem->setText(QApplication::translate("mainWindow", "ParticleSystem", 0, QApplication::UnicodeUTF8));
     actionProcedural_Texture->setText(QApplication::translate("mainWindow", "Procedural Texture", 0, QApplication::UnicodeUTF8));
-    groupBox->setTitle(QApplication::translate("mainWindow", "Particle", 0, QApplication::UnicodeUTF8));
+	actionFile->setText(QApplication::translate("mainWindow", "File", 0, QApplication::UnicodeUTF8));
+	groupBox->setTitle(QApplication::translate("mainWindow", "Particle", 0, QApplication::UnicodeUTF8));
     label_2->setText(QApplication::translate("mainWindow", "Shape:", 0, QApplication::UnicodeUTF8));
     shape_cb->insertItems(0, QStringList()
      << QApplication::translate("mainWindow", "Point", 0, QApplication::UnicodeUTF8)

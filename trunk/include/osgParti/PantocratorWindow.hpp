@@ -25,6 +25,7 @@ namespace osgParti{
 		bool save();
     	bool saveAs();
 		void newParticleSystem();
+		void newFile();
 		void setParticleAlignment(int);
 		void setShape(int i);
 		void setParticleMinSize(double minsize);

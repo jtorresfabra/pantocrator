@@ -35,6 +35,10 @@ bool PantocratorWindow::save(){
 
 
 }
+void PantocratorWindow::newFile(){
+	root->removeChildren(0,root->getNumChildren());
+	
+}
 bool PantocratorWindow::saveAs(){
 	return false;
 }
@@ -72,7 +76,12 @@ void PantocratorWindow::connectSlots(){
 //new particleSystem
 	actionParticleSystem->setStatusTip(tr("New ParticleSystem defaults loaded"));
 	connect(actionParticleSystem, SIGNAL(triggered()), this, SLOT(newParticleSystem()));
+//new File
+	actionFile->setStatusTip(tr("New File"));
+	connect(actionFile, SIGNAL(triggered()), this, SLOT(newFile()));
+
 //combobox
+
 	QObject::connect(alignment_cb, SIGNAL(currentIndexChanged(int)), this, SLOT(setParticleAlignment(int)));
 	QObject::connect(shape_cb, SIGNAL(currentIndexChanged(int)), this, SLOT(setShape(int)));
 	QObject::connect(sizemin_sb, SIGNAL(valueChanged(double)), this, SLOT(setParticleMinSize(double)));
