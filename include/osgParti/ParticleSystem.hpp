@@ -51,7 +51,8 @@ namespace osgParti {
 	void setShape(int i);
  	void setMass(float mass);
 	void setRadius(float radius);
-
+	void setProgram(osgParticle::ModularProgram *program);
+	
 
 	//Particle Colors //////////////////////////////////////////////////////////
     
