@@ -182,6 +182,13 @@ ParticleSystem::ParticleSystem()
 
 ParticleSystem::~ParticleSystem(){}
 
+void ParticleSystem::setProgram(osgParticle::ModularProgram *program){
+	program->setParticleSystem(particleSystem.get());
+	root->addChild(program);
+}
+
+
+
 osg::Group* ParticleSystem::getGroup() { return root.get(); }
 
 osg::PositionAttitudeTransform* ParticleSystem::getPat(){

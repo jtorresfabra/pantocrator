@@ -53,7 +53,13 @@ namespace osgParti{
 		void setParticleTextureIce();
 		void setParticleTextureEmp();
 		void setParticleTextureFlower();
-
+		void setParticleAcceleration(int enabled);
+		void setParticleFluid(int enabled);
+		void setParticleAccelerationX(double x);
+		void setParticleAccelerationY(double y);
+		void setParticleAccelerationZ(double z);
+		void setParticleFluidViscosity(double viscosity);
+		void setParticleFluidDensity(double density);
 
 	public:
 		PantocratorWindow();
@@ -62,7 +68,13 @@ namespace osgParti{
 		void connectSlots();
 		void loadFile(const QString &fileName);
 		void saveFile(const QString &fileName);
+		void setParticleProgram(osgParticle::Operator *op);
+		osg::ref_ptr<osgParticle::ModularProgram>         program;
+		osg::ref_ptr<osgParticle::AccelOperator>      acceleration;
+		osg::ref_ptr<osgParticle::FluidFrictionOperator>     fluid;
 		osg::ref_ptr<osg::Group>                             root;
+		osg::Vec3											 accel;
+	
 	protected:
 		osg::ref_ptr<osgParti::ParticleSystem> particleSystem;
 		virtual ~PantocratorWindow(){}

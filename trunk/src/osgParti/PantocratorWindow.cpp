@@ -3,6 +3,8 @@
 #include <QtGui/QFileDialog>
 #include <osg/View>
 #include <osgParticle/PointPlacer>
+#include <osgParticle/AccelOperator>
+#include <osgParticle/ModularProgram>
 
 using namespace osgParti;
 
@@ -18,7 +20,8 @@ PantocratorWindow::PantocratorWindow():QMainWindow(),MainWindow()
 	statesetManipulator->setStateSet(osgwidget->getCamera()->getOrCreateStateSet());
 	osgwidget->addEventHandler( statesetManipulator.get() );
 	root= new osg::Group();
- 
+ 	acceleration = new osgParticle::AccelOperator();
+	fluid = new osgParticle::FluidFrictionOperator();
 }
 void PantocratorWindow::open(){
 	QString fileName = QFileDialog::getOpenFileName(this);
@@ -100,7 +103,54 @@ void PantocratorWindow::connectSlots(){
 	QObject::connect(toolButton_5, SIGNAL(clicked()),this,SLOT(setParticleTextureIce()));
 	QObject::connect(toolButton_3, SIGNAL(clicked()),this,SLOT(setParticleTextureFlower()));
 	QObject::connect(toolButton_7, SIGNAL(clicked()),this,SLOT(setParticleTextureEmp()));
+	QObject::connect(checkBox,SIGNAL(stateChanged(int)),this,SLOT(setParticleAcceleration(int)));
+	QObject::connect(checkBox_2,SIGNAL(stateChanged(int)),this,SLOT(setParticleFluid(int)));
+	QObject::connect(accelx_sb,SIGNAL(valueChanged(double)),this,SLOT(setParticleAccelerationX(double)));
+	QObject::connect(accely_sb,SIGNAL(valueChanged(double)),this,SLOT(setParticleAccelerationY(double)));
+	QObject::connect(accelz_sb,SIGNAL(valueChanged(double)),this,SLOT(setParticleAccelerationZ(double)));
+	QObject::connect(viscosity,SIGNAL(valueChanged(double)),this,SLOT(setParticleFluidViscosity(double)));
+	QObject::connect(density_sb,SIGNAL(valueChanged(double)),this,SLOT(setParticleFluidDensity(double)));
 
+}
+void PantocratorWindow::setParticleAcceleration(int enabled){
+	if(enabled!=0){
+		accel = osg::Vec3(0,0,-9.8);
+		acceleration->setAcceleration(accel);
+		setParticleProgram(acceleration.get());
+		}else program->removeOperator(0); 
+	
+}
+void PantocratorWindow::setParticleFluid(int enabled){
+	if(enabled!=0){
+		setParticleProgram(fluid.get());
+		}else program->removeOperator(1); 
+	
+}
+void PantocratorWindow::setParticleFluidViscosity(double viscosity){
+		fluid->setFluidViscosity(viscosity);
+}
+void PantocratorWindow::setParticleFluidDensity(double density){
+		fluid->setFluidDensity(density);
+}
+
+void PantocratorWindow::setParticleProgram(osgParticle::Operator *op){
+	program = new osgParticle::ModularProgram;
+	program->addOperator(op);
+	if (particleSystem!=NULL)	particleSystem->setProgram(program.get());
+}
+
+
+void PantocratorWindow::setParticleAccelerationX(double x){
+	accel._v[0]=x;
+	acceleration->setAcceleration(accel);
+}
+void PantocratorWindow::setParticleAccelerationY(double y){
+	accel._v[1]=y;
+	acceleration->setAcceleration(accel);
+}
+void PantocratorWindow::setParticleAccelerationZ(double z){
+	accel._v[2]=z;
+	acceleration->setAcceleration(accel);
 }
 void PantocratorWindow::setParticleAlignment(int i){
 	if (particleSystem!=NULL)

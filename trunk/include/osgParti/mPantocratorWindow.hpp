@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'PantocratorWindow.hpp'
 **
-** Created: Tue Sep 23 19:21:43 2008
+** Created: Wed Sep 24 12:59:05 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-      32,   10, // methods
+      39,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
@@ -60,6 +60,13 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
      790,   28,   28,   28, 0x08,
      814,   28,   28,   28, 0x08,
      838,   28,   28,   28, 0x08,
+     873,  865,   28,   28, 0x08,
+     902,  865,   28,   28, 0x08,
+     926,  924,   28,   28, 0x08,
+     961,  959,   28,   28, 0x08,
+     996,  994,   28,   28, 0x08,
+    1039, 1029,   28,   28, 0x08,
+    1081, 1073,   28,   28, 0x08,
 
        0        // eod
 };
@@ -89,7 +96,14 @@ static const char qt_meta_stringdata_osgParti__PantocratorWindow[] = {
     "setParticleTextureLaser()\0"
     "setParticleTextureElectric()\0"
     "setParticleTextureIce()\0setParticleTextureEmp()\0"
-    "setParticleTextureFlower()\0"
+    "setParticleTextureFlower()\0enabled\0"
+    "setParticleAcceleration(int)\0"
+    "setParticleFluid(int)\0x\0"
+    "setParticleAccelerationX(double)\0y\0"
+    "setParticleAccelerationY(double)\0z\0"
+    "setParticleAccelerationZ(double)\0"
+    "viscosity\0setParticleFluidViscosity(double)\0"
+    "density\0setParticleFluidDensity(double)\0"
 };
 
 const QMetaObject osgParti::PantocratorWindow::staticMetaObject = {
@@ -153,8 +167,15 @@ int osgParti::PantocratorWindow::qt_metacall(QMetaObject::Call _c, int _id, void
         case 29: setParticleTextureIce(); break;
         case 30: setParticleTextureEmp(); break;
         case 31: setParticleTextureFlower(); break;
+        case 32: setParticleAcceleration((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 33: setParticleFluid((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 34: setParticleAccelerationX((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 35: setParticleAccelerationY((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 36: setParticleAccelerationZ((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 37: setParticleFluidViscosity((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 38: setParticleFluidDensity((*reinterpret_cast< double(*)>(_a[1]))); break;
         }
-        _id -= 32;
+        _id -= 39;
     }
     return _id;
 }

@@ -411,7 +411,7 @@ public:
     thetamin_sb->setObjectName(QString::fromUtf8("thetamin_sb"));
     thetamin_sb->setDecimals(2);
   	thetamin_sb->setValue(0.01);
-
+	thetamin_sb->setSingleStep(0.1);
     horizontalLayout_5->addWidget(thetamin_sb);
 
     label_20 = new QLabel(radialshooter_gr);
@@ -423,7 +423,7 @@ public:
     thetamax_sb->setObjectName(QString::fromUtf8("thetamax_sb"));
     thetamax_sb->setDecimals(2);
     thetamax_sb->setValue(0.20);
-
+	thetamax_sb->setSingleStep(0.1);
     horizontalLayout_5->addWidget(thetamax_sb);
 
 
@@ -445,7 +445,7 @@ public:
     phimin_sb->setObjectName(QString::fromUtf8("phimin_sb"));
     phimin_sb->setDecimals(2);
     phimin_sb->setValue(0.00);
-
+	phimin_sb->setSingleStep(0.1);
     horizontalLayout_6->addWidget(phimin_sb);
 
     label_23 = new QLabel(radialshooter_gr);
@@ -457,7 +457,7 @@ public:
     phimax_sb->setObjectName(QString::fromUtf8("phimax_sb"));
     phimax_sb->setDecimals(2);
     phimax_sb->setValue(6.20);
-
+	phimax_sb->setSingleStep(0.1);
     horizontalLayout_6->addWidget(phimax_sb);
 
 
@@ -524,8 +524,8 @@ public:
     countermax_sb = new QDoubleSpinBox(radialshooter_gr);
     countermax_sb->setObjectName(QString::fromUtf8("countermax_sb"));
     countermax_sb->setDecimals(1);
-    countermax_sb->setValue(200);
-
+    countermax_sb->setValue(200.0);
+ 	countermax_sb->setMaximum(500.0);
     horizontalLayout_4->addWidget(countermax_sb);
 
 
@@ -618,15 +618,15 @@ public:
     accely_sb->setObjectName(QString::fromUtf8("accely_sb"));
     accely_sb->setGeometry(QRect(140, 20, 59, 27));
     accely_sb->setDecimals(1);
-    accely_sb->setMaximum(100);
     accely_sb->setSingleStep(0.1);
     accely_sb->setValue(0);
-    accelx_sb = new QDoubleSpinBox(groupBox_2);
+    accely_sb->setMinimum(-100);
+ 	accelx_sb = new QDoubleSpinBox(groupBox_2);
     accelx_sb->setObjectName(QString::fromUtf8("accelx_sb"));
     accelx_sb->setGeometry(QRect(70, 20, 58, 27));
     accelx_sb->setDecimals(1);
-    accelx_sb->setMaximum(50);
-    accelz_sb = new QDoubleSpinBox(groupBox_2);
+    accelx_sb->setMinimum(-100);
+	accelz_sb = new QDoubleSpinBox(groupBox_2);
     accelz_sb->setObjectName(QString::fromUtf8("accelz_sb"));
     accelz_sb->setGeometry(QRect(210, 20, 58, 27));
     accelz_sb->setDecimals(1);
@@ -915,7 +915,7 @@ public:
     countermin_sb_2 = new QDoubleSpinBox(radialshooter_gr_2);
     countermin_sb_2->setObjectName(QString::fromUtf8("countermin_sb_2"));
     countermin_sb_2->setDecimals(1);
-    countermin_sb_2->setMaximum(50);
+ 
 
     horizontalLayout_12->addWidget(countermin_sb_2);
 
@@ -926,8 +926,7 @@ public:
 
     countermax_sb_2 = new QDoubleSpinBox(radialshooter_gr_2);
     countermax_sb_2->setObjectName(QString::fromUtf8("countermax_sb_2"));
-    countermax_sb_2->setDecimals(1);
-    countermax_sb_2->setMaximum(300);
+    countermax_sb_2->setDecimals(0);
     countermax_sb_2->setValue(50);
 
     horizontalLayout_12->addWidget(countermax_sb_2);
