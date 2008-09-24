@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'PantocratorWindow.hpp'
 **
-** Created: Wed Sep 24 12:59:05 2008
+** Created: Wed Sep 24 20:30:51 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-      39,   10, // methods
+      40,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
@@ -33,40 +33,41 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
       48,   28,   36,   28, 0x08,
       57,   28,   28,   28, 0x08,
       77,   28,   28,   28, 0x08,
-     105,  103,   28,   28, 0x08,
-     127,  119,   28,   28, 0x08,
-     162,  154,   28,   28, 0x08,
-     194,  189,   28,   28, 0x08,
-     223,  218,   28,   28, 0x08,
-     254,  247,   28,   28, 0x08,
-     280,   28,   28,   28, 0x08,
-     295,   28,   28,   28, 0x08,
-     314,  308,   28,   28, 0x08,
-     342,  308,   28,   28, 0x08,
-     374,  370,   28,   28, 0x08,
-     400,  370,   28,   28, 0x08,
-     435,  426,   28,   28, 0x08,
-     472,  463,   28,   28, 0x08,
-     509,  500,   28,   28, 0x08,
-     546,  537,   28,   28, 0x08,
-     581,  574,   28,   28, 0x08,
-     604,   28,   28,   28, 0x08,
-     629,   28,   28,   28, 0x08,
-     655,   28,   28,   28, 0x08,
-     680,   28,   28,   28, 0x08,
-     706,   28,   28,   28, 0x08,
-     735,   28,   28,   28, 0x08,
-     761,   28,   28,   28, 0x08,
-     790,   28,   28,   28, 0x08,
-     814,   28,   28,   28, 0x08,
-     838,   28,   28,   28, 0x08,
-     873,  865,   28,   28, 0x08,
-     902,  865,   28,   28, 0x08,
-     926,  924,   28,   28, 0x08,
-     961,  959,   28,   28, 0x08,
-     996,  994,   28,   28, 0x08,
-    1039, 1029,   28,   28, 0x08,
-    1081, 1073,   28,   28, 0x08,
+      87,   28,   28,   28, 0x08,
+     115,  113,   28,   28, 0x08,
+     137,  129,   28,   28, 0x08,
+     172,  164,   28,   28, 0x08,
+     204,  199,   28,   28, 0x08,
+     233,  228,   28,   28, 0x08,
+     264,  257,   28,   28, 0x08,
+     290,   28,   28,   28, 0x08,
+     305,   28,   28,   28, 0x08,
+     324,  318,   28,   28, 0x08,
+     352,  318,   28,   28, 0x08,
+     384,  380,   28,   28, 0x08,
+     410,  380,   28,   28, 0x08,
+     445,  436,   28,   28, 0x08,
+     482,  473,   28,   28, 0x08,
+     519,  510,   28,   28, 0x08,
+     556,  547,   28,   28, 0x08,
+     591,  584,   28,   28, 0x08,
+     614,   28,   28,   28, 0x08,
+     639,   28,   28,   28, 0x08,
+     665,   28,   28,   28, 0x08,
+     690,   28,   28,   28, 0x08,
+     716,   28,   28,   28, 0x08,
+     745,   28,   28,   28, 0x08,
+     771,   28,   28,   28, 0x08,
+     800,   28,   28,   28, 0x08,
+     824,   28,   28,   28, 0x08,
+     848,   28,   28,   28, 0x08,
+     883,  875,   28,   28, 0x08,
+     912,  875,   28,   28, 0x08,
+     936,  934,   28,   28, 0x08,
+     971,  969,   28,   28, 0x08,
+    1006, 1004,   28,   28, 0x08,
+    1049, 1039,   28,   28, 0x08,
+    1091, 1083,   28,   28, 0x08,
 
        0        // eod
 };
@@ -74,10 +75,11 @@ static const uint qt_meta_data_osgParti__PantocratorWindow[] = {
 static const char qt_meta_stringdata_osgParti__PantocratorWindow[] = {
     "osgParti::PantocratorWindow\0\0open()\0"
     "bool\0save()\0saveAs()\0newParticleSystem()\0"
-    "setParticleAlignment(int)\0i\0setShape(int)\0"
-    "minsize\0setParticleMinSize(double)\0"
-    "maxsize\0setParticleMaxSize(double)\0"
-    "life\0setParticleLife(double)\0mass\0"
+    "newFile()\0setParticleAlignment(int)\0"
+    "i\0setShape(int)\0minsize\0"
+    "setParticleMinSize(double)\0maxsize\0"
+    "setParticleMaxSize(double)\0life\0"
+    "setParticleLife(double)\0mass\0"
     "setParticleMass(double)\0radius\0"
     "setParticleRadius(double)\0setFromColor()\0"
     "setToColor()\0theta\0setParticleMinTheta(double)\0"
@@ -139,43 +141,44 @@ int osgParti::PantocratorWindow::qt_metacall(QMetaObject::Call _c, int _id, void
         case 2: { bool _r = saveAs();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
         case 3: newParticleSystem(); break;
-        case 4: setParticleAlignment((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 5: setShape((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 6: setParticleMinSize((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 7: setParticleMaxSize((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 8: setParticleLife((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 9: setParticleMass((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 10: setParticleRadius((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 11: setFromColor(); break;
-        case 12: setToColor(); break;
-        case 13: setParticleMinTheta((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 14: setParticleMaxTheta((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 15: setParticleMinPhi((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 16: setParticleMaxPhi((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 17: setParticleMinSpeed((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 18: setParticleMaxSpeed((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 19: setParticleMinCount((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 20: setParticleMaxCount((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 21: setParticlePlacer((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 22: setParticleTextureFire(); break;
-        case 23: setParticleTextureSmoke(); break;
-        case 24: setParticleTextureBase(); break;
-        case 25: setParticleTextureSonic(); break;
-        case 26: setParticleTextureVirulent(); break;
-        case 27: setParticleTextureLaser(); break;
-        case 28: setParticleTextureElectric(); break;
-        case 29: setParticleTextureIce(); break;
-        case 30: setParticleTextureEmp(); break;
-        case 31: setParticleTextureFlower(); break;
-        case 32: setParticleAcceleration((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 33: setParticleFluid((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 34: setParticleAccelerationX((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 35: setParticleAccelerationY((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 36: setParticleAccelerationZ((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 37: setParticleFluidViscosity((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 38: setParticleFluidDensity((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 4: newFile(); break;
+        case 5: setParticleAlignment((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: setShape((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 7: setParticleMinSize((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 8: setParticleMaxSize((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 9: setParticleLife((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 10: setParticleMass((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 11: setParticleRadius((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 12: setFromColor(); break;
+        case 13: setToColor(); break;
+        case 14: setParticleMinTheta((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 15: setParticleMaxTheta((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 16: setParticleMinPhi((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 17: setParticleMaxPhi((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 18: setParticleMinSpeed((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 19: setParticleMaxSpeed((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 20: setParticleMinCount((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 21: setParticleMaxCount((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 22: setParticlePlacer((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 23: setParticleTextureFire(); break;
+        case 24: setParticleTextureSmoke(); break;
+        case 25: setParticleTextureBase(); break;
+        case 26: setParticleTextureSonic(); break;
+        case 27: setParticleTextureVirulent(); break;
+        case 28: setParticleTextureLaser(); break;
+        case 29: setParticleTextureElectric(); break;
+        case 30: setParticleTextureIce(); break;
+        case 31: setParticleTextureEmp(); break;
+        case 32: setParticleTextureFlower(); break;
+        case 33: setParticleAcceleration((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 34: setParticleFluid((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 35: setParticleAccelerationX((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 36: setParticleAccelerationY((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 37: setParticleAccelerationZ((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 38: setParticleFluidViscosity((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 39: setParticleFluidDensity((*reinterpret_cast< double(*)>(_a[1]))); break;
         }
-        _id -= 39;
+        _id -= 40;
     }
     return _id;
 }
